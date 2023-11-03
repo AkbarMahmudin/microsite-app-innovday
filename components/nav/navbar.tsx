@@ -16,14 +16,12 @@ import {
   NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
 import {
   CommandDialog,
   CommandEmpty,
@@ -31,8 +29,9 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "../ui/command";
-import { Button } from "../ui/button";
+} from "@/components/ui/command";
+import { Button } from "@/components/ui/button";
+
 import HumbergerMenu from "./humberger-menu";
 
 const ListItem = React.forwardRef<
@@ -72,7 +71,9 @@ const renderMenutItems = (menuItems: any) =>
             className="px-4 text-sm font-medium block md:hidden"
           >
             <AccordionItem value={item.title}>
-              <AccordionTrigger className="w-full">{item.title}</AccordionTrigger>
+              <AccordionTrigger className="w-full">
+                {item.title}
+              </AccordionTrigger>
               <AccordionContent>
                 {item.children.map((childItem: any) => (
                   <ListItem
