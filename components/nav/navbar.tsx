@@ -33,6 +33,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 import HumbergerMenu from "./humberger-menu";
+import { getKeyControl } from "@/lib/user-agent";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -119,6 +120,11 @@ type Props = {
 
 export default function Navbar({ data }: Props) {
   const [open, setOpen] = React.useState(false);
+  const [keyControl, setKeyControl] = React.useState("");
+
+  React.useEffect(() => {
+    setKeyControl(getKeyControl());
+  }, []);
 
   const menuItems = renderMenutItems(data);
 
@@ -152,7 +158,7 @@ export default function Navbar({ data }: Props) {
 
       <Button
         variant="outline"
-        className="pl-1.5 pr-2 py-2 rounded-[10px] border border-neutral-400 justify-center items-center gap-1 md:inline-flex hidden"
+        className="pl-1.5 pr-2 py-6 rounded-[10px] bg-transparent justify-center items-center gap-1 md:inline-flex hidden"
         onClick={() => setOpen((prev) => !prev)}
       >
         <Icon
@@ -163,9 +169,19 @@ export default function Navbar({ data }: Props) {
           className="mr-2"
         />
         <div className="text-neutral-400 text-base font-normal">Search</div>
-        <kbd className="inline-flex ml-2 pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-[#909090] opacity-100">
-          <span className="text-xs">⌘</span>K
-        </kbd>
+        {/* {!/Android/.test(window.navigator.userAgent) && (
+          <kbd className="inline-flex ml-2 pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-[#909090] opacity-100">
+            <span className="text-xs">
+              {window.navigator.userAgent.indexOf("Mac") != -1 ? "⌘" : "Ctrl +"}
+            </span>
+            K
+          </kbd>
+        )} */}
+        {keyControl && (
+          <kbd className="inline-flex ml-2 pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-[#909090] opacity-100">
+            <span className="text-xs">{keyControl}</span>K
+          </kbd>
+        )}
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
