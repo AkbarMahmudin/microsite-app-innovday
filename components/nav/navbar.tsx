@@ -124,7 +124,7 @@ export default function Navbar({ data }: Props) {
 
   React.useEffect(() => {
     setKeyControl(getKeyControl());
-  }, []);
+  }, [keyControl]);
 
   const menuItems = renderMenutItems(data);
 
@@ -158,7 +158,7 @@ export default function Navbar({ data }: Props) {
 
       <Button
         variant="outline"
-        className="pl-1.5 pr-2 py-6 rounded-[10px] bg-transparent justify-center items-center gap-1 md:inline-flex hidden"
+        className="pl-1.5 pr-2 py-6 rounded-[10px] bg-transparent justify-center items-center gap-1 md:inline-flex hidden border-input"
         onClick={() => setOpen((prev) => !prev)}
       >
         <Icon
@@ -169,14 +169,6 @@ export default function Navbar({ data }: Props) {
           className="mr-2"
         />
         <div className="text-neutral-400 text-base font-normal">Search</div>
-        {/* {!/Android/.test(window.navigator.userAgent) && (
-          <kbd className="inline-flex ml-2 pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-[#909090] opacity-100">
-            <span className="text-xs">
-              {window.navigator.userAgent.indexOf("Mac") != -1 ? "⌘" : "Ctrl +"}
-            </span>
-            K
-          </kbd>
-        )} */}
         {keyControl && (
           <kbd className="inline-flex ml-2 pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-[#909090] opacity-100">
             <span className="text-xs">{keyControl}</span>K
