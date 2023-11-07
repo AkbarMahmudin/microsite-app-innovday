@@ -7,7 +7,7 @@
     --background: #EDFFFC;
     --foreground: hsla(222.2, 84%, 4.9%,1);
 
-    --card: 0 0% 100%;
+    --card: hsla(0 0% 100%);
     --card-foreground: hsla(222.2, 84%, 4.9%,1);
  
     --popover: #EDFFFC;
@@ -32,7 +32,7 @@
     --input: hsla(214.3, 31.8%, 91.4%, 1);
     --ring: hsla(222.2, 84%, 4.9%, 1);
  
-    --radius: 0.5rem;
+    --radius: 1rem;
 
     --green: #EDFFFC;
   }
