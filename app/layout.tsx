@@ -10,6 +10,7 @@ import { useNavData } from "./config-navigation";
 // components
 import { Navbar } from "@/components/nav/";
 import { Footer } from "@/components/footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -45,6 +46,7 @@ export default function RootLayout({
           contact={CONTACTS}
           social={SOCIAL_MEDIA}
         />
+        <Toaster />
       </body>
     </html>
   );
