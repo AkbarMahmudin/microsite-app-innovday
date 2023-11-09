@@ -15,6 +15,7 @@ const listVariants = cva("px-3 rounded-2xl text-primary w-full", {
     variant: {
       outline: "border-4 border-primary",
       filled: "bg-teal-600/20 border-none",
+      striped: "bg-teal-600/20 border-none",
     },
   },
   defaultVariants: {
@@ -26,7 +27,7 @@ type ListProps = {
   index?: number;
   keyword: string;
   description: string;
-  variant?: "outline" | "filled";
+  variant?: "outline" | "filled" | "striped";
 };
 
 const ListDesktop = ({
@@ -86,15 +87,23 @@ const ListMobile = ({
 
 type Props = {
   data: ListProps[];
-  variant?: "outline" | "filled";
+  variant?: "outline" | "filled" | "striped";
 };
 
 const List = ({ data, variant = "outline" }: Props) => {
+  const stripedStyle = (index: number) => {
+    if (variant !== "striped") return variant;
+
+    if (index % 2 !== 0) {
+      return "filled";
+    }
+    return "outline";
+  };
   return (
     <>
       <div className="w-full hidden flex-col gap-2 md:flex">
         {data.map((item, index) => (
-          <ListDesktop key={index} variant={variant} {...item} />
+          <ListDesktop key={index} variant={stripedStyle(index)} {...item} />
         ))}
       </div>
       <Accordion
@@ -103,7 +112,7 @@ const List = ({ data, variant = "outline" }: Props) => {
         className="flex md:hidden flex-col gap-2 w-full"
       >
         {data.map((item, index) => (
-          <ListMobile key={index} variant={variant} {...item} />
+          <ListMobile key={index} variant={stripedStyle(index)} {...item} />
         ))}
       </Accordion>
     </>
