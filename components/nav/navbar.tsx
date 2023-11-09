@@ -34,6 +34,7 @@ import { Button } from "@/components/ui/button";
 
 import HumbergerMenu from "./humberger-menu";
 import { getKeyControl } from "@/lib/user-agent";
+import { Announcement, AnnouncementProps } from "../announcement";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -116,9 +117,10 @@ const renderMenutItems = (menuItems: any) =>
 
 type Props = {
   data: any;
+  announcement?: AnnouncementProps;
 };
 
-export default function Navbar({ data }: Props) {
+export default function Navbar({ data, announcement }: Props) {
   const [open, setOpen] = React.useState(false);
   const [keyControl, setKeyControl] = React.useState("");
 
@@ -141,52 +143,55 @@ export default function Navbar({ data }: Props) {
   }, []);
 
   return (
-    <nav className="fixed z-10 min-w-full justify-between items-center inline-flex py-5 md:px-28 px-[18px] bg-gradient-to-r from-cyan-50 to-cyan-50 shadow backdrop-blur-[50px]">
-      <Image
-        src="/logo/innovday_full.png"
-        alt="Innovation Day Logo"
-        width={130}
-        height={130}
-      />
-
-      <NavigationMenu className="hidden md:block">
-        <NavigationMenuList>{menuItems}</NavigationMenuList>
-        <NavigationMenuViewport />
-      </NavigationMenu>
-
-      <HumbergerMenu menu={menuItems} side="right" onOpen={setOpen} />
-
-      <Button
-        variant="outline"
-        className="pl-1.5 pr-2 py-6 rounded-[10px] bg-transparent justify-center items-center gap-1 md:inline-flex hidden border-input"
-        onClick={() => setOpen((prev) => !prev)}
-      >
-        <Icon
-          icon="basil:search-outline"
-          width="22"
-          height="22"
-          color="#909090"
-          className="mr-2"
+    <header className="fixed z-10 w-full">
+      {announcement && <Announcement {...announcement} />}
+      <nav className="fixed z-10 min-w-full justify-between items-center inline-flex py-5 md:px-28 px-[18px] bg-gradient-to-r from-cyan-50 to-cyan-50 shadow backdrop-blur-[50px]">
+        <Image
+          src="/logo/innovday_full.png"
+          alt="Innovation Day Logo"
+          width={130}
+          height={130}
         />
-        <div className="text-neutral-400 text-base font-normal">Search</div>
-        {keyControl && (
-          <kbd className="inline-flex ml-2 pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-[#909090] opacity-100">
-            <span className="text-xs">{keyControl}</span>K
-          </kbd>
-        )}
-      </Button>
 
-      <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Suggestions">
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
-          </CommandGroup>
-        </CommandList>
-      </CommandDialog>
-    </nav>
+        <NavigationMenu className="hidden md:block">
+          <NavigationMenuList>{menuItems}</NavigationMenuList>
+          <NavigationMenuViewport />
+        </NavigationMenu>
+
+        <HumbergerMenu menu={menuItems} side="right" onOpen={setOpen} />
+
+        <Button
+          variant="outline"
+          className="pl-1.5 pr-2 rounded-[10px] bg-transparent justify-center items-center gap-1 md:inline-flex hidden border-input"
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <Icon
+            icon="basil:search-outline"
+            width="22"
+            height="22"
+            color="#909090"
+            className="mr-2"
+          />
+          <div className="text-neutral-400 text-base font-normal">Search</div>
+          {keyControl && (
+            <kbd className="inline-flex ml-2 pointer-events-none h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-[#909090] opacity-100">
+              <span className="text-xs">{keyControl}</span>K
+            </kbd>
+          )}
+        </Button>
+
+        <CommandDialog open={open} onOpenChange={setOpen}>
+          <CommandInput placeholder="Type a command or search..." />
+          <CommandList>
+            <CommandEmpty>No results found.</CommandEmpty>
+            <CommandGroup heading="Suggestions">
+              <CommandItem>Calendar</CommandItem>
+              <CommandItem>Search Emoji</CommandItem>
+              <CommandItem>Calculator</CommandItem>
+            </CommandGroup>
+          </CommandList>
+        </CommandDialog>
+      </nav>
+    </header>
   );
 }

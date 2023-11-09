@@ -36,10 +36,19 @@ export default function RootLayout({
     ourProgram,
   };
 
+  const announcement = {
+    text: "Innovation Day akan segera tayang dalam",
+    cta: {
+      label: "Tonton Sekarang",
+      href: "/",
+    },
+    startDate: new Date("2023-11-09 14:25:00"),
+  };
+
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar data={useNavData()} />
+        <Navbar announcement={announcement} data={useNavData()} />
         {children}
         <Footer
           navData={navData as any}
