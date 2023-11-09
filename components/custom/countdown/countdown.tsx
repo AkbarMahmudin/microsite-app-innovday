@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { use, useCallback, useEffect, useRef, useState } from "react";
 
 type Props = {
   startDate?: Date;
@@ -18,7 +18,7 @@ const Countdown = ({ startDate }: Props) => {
 
   const secondTimer: any = useRef(null);
 
-  const getTimeDifference = (countDownDate: any) => {
+  const getTimeDifference = useCallback((countDownDate: any) => {
     const currentTime = new Date().getTime();
     const timeDiffrence = countDownDate - currentTime;
     const days = Math.floor(timeDiffrence / (24 * 60 * 60 * 1000));
@@ -59,7 +59,7 @@ const Countdown = ({ startDate }: Props) => {
         seconds: seconds,
       });
     }
-  };
+  }, []);
 
   const startCountDown = useCallback(() => {
     const customDate = startDate ? startDate : new Date();

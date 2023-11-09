@@ -6,7 +6,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "../ui/accordion";
+} from "../../ui/accordion";
 import { cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 

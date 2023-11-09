@@ -1,6 +1,6 @@
 import React from "react";
 import { ColorVariants, colorVariants } from "./_color-variants";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 
 type Props = ColorVariants & {
   question: string;

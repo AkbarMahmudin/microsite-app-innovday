@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { NavigationMenu, NavigationMenuList, NavigationMenuViewport } from "../ui/navigation-menu";
+import { NavigationMenu, NavigationMenuList, NavigationMenuViewport } from "../../ui/navigation-menu";
 import React from "react";
 
 type Props = {

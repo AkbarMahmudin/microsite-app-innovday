@@ -8,8 +8,8 @@ import { CONTACTS, SOCIAL_MEDIA } from "@/_mock";
 import { useNavData } from "./config-navigation";
 
 // components
-import { Navbar } from "@/components/nav/";
-import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/custom/nav";
+import { Footer } from "@/components/custom/footer";
 import { Toaster } from "@/components/ui/toaster";
 
 const poppins = Poppins({
@@ -42,7 +42,7 @@ export default function RootLayout({
       label: "Tonton Sekarang",
       href: "/",
     },
-    startDate: new Date("2023-11-09 14:25:00"),
+    startDate: new Date("2023-11-09 14:40:00"),
   };
 
   return (

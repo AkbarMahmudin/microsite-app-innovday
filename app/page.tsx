@@ -1,5 +1,5 @@
-import { Announcement } from "@/components/announcement";
-import Timer4 from "@/components/countdown/countdown";
+import { Announcement } from "@/components/custom/announcement";
+import Timer4 from "@/components/custom/countdown/countdown";
 
 export default function Home() {
   return (

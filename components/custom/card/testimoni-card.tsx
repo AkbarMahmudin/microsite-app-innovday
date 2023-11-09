@@ -5,8 +5,8 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+} from "../../ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { ColorVariants, colorVariants } from "./_color-variants";
 
 type Props = ColorVariants & {

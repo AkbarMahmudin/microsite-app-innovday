@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 
 type ContactInfoProps = {
   contact: { icon: string; text: string; link?: string }[];

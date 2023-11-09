@@ -2,7 +2,7 @@
 "use client";
 
 import React from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import Link from "next/link";
 import Image from "next/image";
 
