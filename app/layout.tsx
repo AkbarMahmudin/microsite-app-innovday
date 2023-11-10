@@ -42,7 +42,7 @@ export default function RootLayout({
       label: "Tonton Sekarang",
       href: "/",
     },
-    startDate: new Date("2023-11-09 14:40:00"),
+    startDate: new Date("2023-11-11 14:40:00"),
   };
 
   return (
