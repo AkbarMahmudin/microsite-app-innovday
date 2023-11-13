@@ -11,6 +11,13 @@
   display: block;
 }
 
+.swiper-wrapper {
+  transition-timing-function : linear;
+  -webkit-transition-timing-function:linear !important;
+  -o-transition-timing-function:linear !important;
+  transition-timing-function:linear !important;
+}
+
 /* Desktop */
 @media screen and (min-width: 768px) {
   .swiper-slide {

@@ -9,13 +9,10 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "../../ui/avatar";
 import { ColorVariants, colorVariants } from "./_color-variants";
 
-type Props = ColorVariants & {
-  profilUrl?: string;
-  name: string;
-  job: string;
-  title: string;
-  description: string;
-};
+// type
+import { Testimoni } from "@/types";
+
+type Props = ColorVariants & Testimoni;
 
 const TestimoniCard = ({
   profilUrl = '',
