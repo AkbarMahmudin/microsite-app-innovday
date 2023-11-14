@@ -3,7 +3,7 @@ type EventPreview = {
   title: string;
   imageUrl: string;
   description?: string;
-  href?: string;
+  url?: string;
 };
 
 export default EventPreview;

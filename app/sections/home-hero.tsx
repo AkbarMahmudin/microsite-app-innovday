@@ -3,6 +3,7 @@ import React from "react";
 
 // copywrite
 import { home } from "@/_mock/copywriting";
+
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
