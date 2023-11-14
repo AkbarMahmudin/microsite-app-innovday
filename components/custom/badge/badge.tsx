@@ -19,6 +19,7 @@ export const badgeVariants = cva(
       size: {
         default: "text-xl",
         small: "text-sm",
+        large: "text[32px]"
       },
     },
     defaultVariants: {

@@ -77,6 +77,13 @@
   }
 }
 
+@layer components {
+  .container {
+    @apply py-5 md:px-28 px-[18px] m-0;
+  }
+}
+
+
 .animate-timer {
   position: relative;
   animation: animatetop 1s infinite;

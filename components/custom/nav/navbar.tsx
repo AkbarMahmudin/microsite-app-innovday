@@ -143,9 +143,9 @@ export default function Navbar({ data, announcement }: Props) {
   }, []);
 
   return (
-    <header className="fixed z-10 w-full">
+    <header className="fixed z-10 w-full bg-transparent">
       {announcement && <Announcement {...announcement} />}
-      <nav className="fixed z-10 min-w-full justify-between items-center inline-flex py-5 md:px-28 px-[18px] bg-gradient-to-r from-cyan-50 to-cyan-50 shadow backdrop-blur-[50px]">
+      <nav className="container fixed z-10 min-w-full justify-between items-center inline-flex bg-gradient-to-r from-cyan-50 to-cyan-50 shadow backdrop-blur-[50px]">
         <Image
           src="/logo/innovday_full.png"
           alt="Innovation Day Logo"
