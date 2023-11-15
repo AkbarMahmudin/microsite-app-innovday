@@ -18,7 +18,7 @@ const HumbergerMenu = ({ menu, side = "top", onOpen }: Props) => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-2 md:hidden items-center">
+    <div className="grid grid-cols-2 gap-2 lg:hidden items-center">
       <Icon
         icon="basil:search-outline"
         width="24"
@@ -27,7 +27,7 @@ const HumbergerMenu = ({ menu, side = "top", onOpen }: Props) => {
         onClick={() => onOpen((prev: any) => !prev)}
       />
       <Sheet>
-        <SheetTrigger className="block md:hidden">
+        <SheetTrigger className="block lg:hidden">
           <Icon icon="solar:hamburger-menu-broken" width="30" height="30" />
         </SheetTrigger>
         <SheetContent side={side} className={widthSheet[side]}>

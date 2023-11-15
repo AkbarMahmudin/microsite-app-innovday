@@ -110,7 +110,7 @@ function Footer({ navData, contact, social }: Props) {
 
   return (
     <footer className="w-full flex-col justify-center items-center gap-[30px] inline-flex bg-primary md:pt-16 md:pb-8 py-8 md:px-32 px-4 text-white">
-      <div className="w-full md:px-0 px-5 md:flex-row flex-col md:justify-between justify-center md:items-start items-center gap-[50px] inline-flex">
+      <div className="w-full lg:px-0 px-5 lg:flex-row flex-col lg:justify-between justify-center lg:items-start items-center gap-[50px] inline-flex">
         <ContactInfo contact={contact} />
 
         <Navigation menu={menu} ourProgram={ourProgram as any} />

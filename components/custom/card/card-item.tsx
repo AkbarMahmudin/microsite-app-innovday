@@ -5,6 +5,8 @@ import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../../ui/card";
 import Link from "next/link";
 import Image from "next/image";
+import { fExcerpt } from "@/lib/format-string";
+import { fDate } from "@/lib/format-time";
 
 const CardImage = ({ imageUrl }: { imageUrl: string }) => (
   <div className="relative overflow-hidden">
@@ -16,7 +18,7 @@ const CardImage = ({ imageUrl }: { imageUrl: string }) => (
       className="object-cover w-full"
     />
     <div className="h-7 px-3 bg-cyan-100 rounded-[20px] border border-primary backdrop-blur-[5px] justify-start items-start gap-2.5 inline-flex absolute top-3 right-3">
-      <div className="text-primary text-sm font-semibold uppercase leading-7 tracking-wide">
+      <div className="text-primary lg:text-sm text-xs font-semibold uppercase lg:leading-7 leading-6 lg:tracking-wide tracking-tight">
         Innovation Day
       </div>
     </div>
@@ -27,23 +29,31 @@ type Props = {
   thumbnailUrl: string;
   title: string;
   description: string;
-  date: string;
-  href: string;
+  date: Date | string;
+  url: string;
+  excerptLength?: number;
 };
 
-const CardItem = ({ title, description, date, href, thumbnailUrl }: Props) => {
+const CardItem = ({
+  title,
+  description,
+  date,
+  url,
+  thumbnailUrl,
+  excerptLength,
+}: Props) => {
   return (
     <Card className="overflow-hidden">
       <CardImage imageUrl={thumbnailUrl} />
       <CardHeader className="pb-3 px-4">
         <time
-          dateTime={date}
+          dateTime={date.toString()}
           className="text-xs font-normal tracking-wide text-muted-foreground mb-3"
         >
-          {date}
+          {fDate(date)}
         </time>
         <Link
-          href={href}
+          href={url}
           className="inline-flex flex-row justify-between items-start"
         >
           <CardTitle className="text-base font-bold">{title}</CardTitle>
@@ -65,7 +75,7 @@ const CardItem = ({ title, description, date, href, thumbnailUrl }: Props) => {
         </Link>
       </CardHeader>
       <CardContent className="text-sm font-normal text-justify px-4">
-        {description}
+        {fExcerpt(description, excerptLength)}
       </CardContent>
     </Card>
   );

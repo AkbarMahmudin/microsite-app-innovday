@@ -28,7 +28,11 @@ const Event = ({
   type: "innovation-day" | "in-talks";
   direction?: "left" | "right";
 }) => (
-  <div className={`flex lg:flex-row flex-col lg:justify-between justify-start items-center lg:gap-10 gap-4 ${direction === 'right' ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+  <div
+    className={`flex lg:flex-row flex-col lg:justify-between justify-start items-center lg:gap-10 gap-4 ${
+      direction === "right" ? "lg:flex-row" : "lg:flex-row-reverse"
+    }`}
+  >
     <div className="flex flex-col justify-start gap-4 lg:w-2/5 lg:pr-5 lg:my-auto">
       <Image
         src={cp[type].logo}
@@ -52,7 +56,11 @@ const Event = ({
       </Link>
     </div>
     <div className="lg:w-3/5">
-      <SwiperSlider data={cp[type].preview} navigationPosition={screen.width > 768 ? direction : 'right'} fromLast={screen.width > 768 && direction === 'left'} />
+      <SwiperSlider
+        data={cp[type].preview}
+        navigationPosition={screen.width > 768 ? direction : "right"}
+        fromLast={screen.width > 768 && direction === "left"}
+      />
     </div>
   </div>
 );

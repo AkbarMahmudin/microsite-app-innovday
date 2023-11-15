@@ -84,5 +84,44 @@ export const home = {
         ],
       },
     },
+    "latest-events": {
+      tag: "Tayangan Ulang",
+      title: "Latest Events",
+      description: "Tonton dan ikuti beberapa program terbaru kami!",
+      cta: {
+        label: "Explore More",
+        url: "/events",
+      },
+      events: [
+        {
+          thumbnailUrl: "/valid thumbnail.png",
+          title: "Innovation Day #1",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+          date: "2021-01-01",
+          url: "/events/1",
+        },
+        {
+          thumbnailUrl: "/valid thumbnail.png",
+          title: "Innovation Day #2",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+          date: "2021-01-01",
+          url: "/events/1",
+        },
+        {
+          thumbnailUrl: "/valid thumbnail.png",
+          title: "Innovation Day #3",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+          date: "2021-01-01",
+          url: "/events/1",
+        },
+        {
+          thumbnailUrl: "/valid thumbnail.png",
+          title: "Innovation Day #4",
+          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+          date: "2021-01-01",
+          url: "/events/1",
+        },
+      ]
+    },
   },
 };

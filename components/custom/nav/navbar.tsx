@@ -153,7 +153,7 @@ export default function Navbar({ data, announcement }: Props) {
           height={130}
         />
 
-        <NavigationMenu className="hidden md:block">
+        <NavigationMenu className="hidden lg:block">
           <NavigationMenuList>{menuItems}</NavigationMenuList>
           <NavigationMenuViewport />
         </NavigationMenu>
@@ -162,7 +162,7 @@ export default function Navbar({ data, announcement }: Props) {
 
         <Button
           variant="outline"
-          className="pl-1.5 pr-2 rounded-[10px] bg-transparent justify-center items-center gap-1 md:inline-flex hidden border-input"
+          className="pl-1.5 pr-2 rounded-[10px] bg-transparent justify-center items-center gap-1 lg:inline-flex hidden border-input"
           onClick={() => setOpen((prev) => !prev)}
         >
           <Icon
