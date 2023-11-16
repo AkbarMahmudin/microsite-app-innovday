@@ -1,14 +1,16 @@
-import { Badge } from "@/components/custom/badge";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 // copywrite
 import { home } from "@/_mock/copywriting";
 
-import Link from "next/link";
+// components
 import { buttonVariants } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { Badge } from "@/components/custom/badge";
 import { Card, CardContent } from "@/components/ui/card";
+import Maskot from "@/components/maskot";
 
 const cp = home.content.hero;
 
@@ -32,16 +34,6 @@ const EmbedVideo = () => (
     className="w-full mx-auto"
     width={300}
     height={300}
-  />
-);
-
-const Maskot = () => (
-  <Image
-    src="/maskot/base.png"
-    alt=""
-    className="absolute md:-right-28 -right-4 md:-bottom-28 -bottom-4 md:w-[265px] w-[125px]"
-    width={265}
-    height={265}
   />
 );
 
@@ -95,7 +87,11 @@ const Hero = () => {
       <div className="hero__image w-full relative md:px-4 px-7 md:py-9 py-14">
         <PopUp />
         <EmbedVideo />
-        <Maskot />
+        {/* <Maskot /> */}
+        <Maskot
+          variant="base"
+          className="absolute md:-right-28 -right-4 md:-bottom-28 -bottom-4 md:w-[265px] w-[125px]"
+        />
       </div>
     </section>
   );
