@@ -64,8 +64,8 @@ const Event = ({
       <div className="lg:w-3/5">
         <SwiperSlider
           data={cp[type].preview}
-          navigationPosition={breakpoint === 'md' ? direction : "right"}
-          fromLast={breakpoint === 'md' && direction === "left"}
+          navigationPosition={breakpoint === 'lg' ? direction : "right"}
+          fromLast={direction === "left"}
         />
       </div>
     </div>

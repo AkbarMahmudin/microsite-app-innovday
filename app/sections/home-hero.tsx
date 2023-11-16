@@ -87,7 +87,6 @@ const Hero = () => {
       <div className="hero__image w-full relative md:px-4 px-7 md:py-9 py-14">
         <PopUp />
         <EmbedVideo />
-        {/* <Maskot /> */}
         <Maskot
           variant="base"
           className="absolute md:-right-28 -right-4 md:-bottom-28 -bottom-4 md:w-[265px] w-[125px]"

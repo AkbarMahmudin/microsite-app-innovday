@@ -6,23 +6,29 @@ import {
 } from "@/components/ui/tabs";
 import React from "react";
 
-type Props = React.ComponentPropsWithoutRef<typeof TabsUi> & {
-  data: {
-    title: string;
-    content: React.ReactNode | React.ReactNode[] | string;
-  }[];
+type CustomTabsListProps = {
+  titles: string[];
+  onChangeTab: (e: string) => void;
 };
 
-const CustomTabsList = ({ titles }: { titles: string[] }) => {
+const CustomTabsList = ({ titles, onChangeTab }: CustomTabsListProps) => {
+  const handleChangeTab = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const value: string = (e.target as HTMLButtonElement).textContent as string;
+    onChangeTab(value.toLocaleLowerCase());
+  }
+
   return (
     <TabsList
-      className={`grid w-full grid-cols-${titles.length ?? 2} bg-transparent mb-4`}
+      className={`grid w-full grid-cols-${
+        titles.length ?? 2
+      } bg-transparent mb-4`}
     >
       {titles.map((title, index) => (
         <TabsTrigger
           className="capitalize"
           key={index}
           value={title.toLocaleLowerCase()}
+          onClick={handleChangeTab}
         >
           {title}
         </TabsTrigger>
@@ -33,22 +39,36 @@ const CustomTabsList = ({ titles }: { titles: string[] }) => {
 
 const CustomTabsContent = ({ data }: Props) => {
   return data.map((item, index) => (
-    <TabsContent key={index} value={item.title.toLocaleLowerCase()} className="text-sm font-normal">
-      <p dangerouslySetInnerHTML={
-        typeof item.content === "string"
-          ? { __html: item.content }
-          : undefined
-      }></p>
+    <TabsContent
+      key={index}
+      value={item.title.toLocaleLowerCase()}
+      className="text-sm font-normal"
+    >
+      <p
+        dangerouslySetInnerHTML={
+          typeof item.content === "string"
+            ? { __html: item.content }
+            : undefined
+        }
+      ></p>
     </TabsContent>
   ));
 };
 
-const Tabs = ({ data, ...props }: Props) => {
+type Props = React.ComponentPropsWithoutRef<typeof TabsUi> & {
+  data: {
+    title: string;
+    content: React.ReactNode | React.ReactNode[] | string;
+  }[];
+  onChangeTab?: (e: string) => void;
+};
+
+const Tabs = ({ data, onChangeTab = () => {}, ...props }: Props) => {
   const titles = data.map((item) => item.title);
 
   return (
     <TabsUi {...props}>
-      <CustomTabsList titles={titles} />
+      <CustomTabsList onChangeTab={onChangeTab} titles={titles} />
       <CustomTabsContent data={data} />
     </TabsUi>
   );
