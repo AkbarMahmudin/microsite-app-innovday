@@ -96,32 +96,57 @@ export const home = {
         {
           thumbnailUrl: "/valid thumbnail.png",
           title: "Innovation Day #1",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
           date: "2021-01-01",
           url: "/events/1",
         },
         {
           thumbnailUrl: "/valid thumbnail.png",
           title: "Innovation Day #2",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
           date: "2021-01-01",
           url: "/events/1",
         },
         {
           thumbnailUrl: "/valid thumbnail.png",
           title: "Innovation Day #3",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
           date: "2021-01-01",
           url: "/events/1",
         },
         {
           thumbnailUrl: "/valid thumbnail.png",
           title: "Innovation Day #4",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
           date: "2021-01-01",
           url: "/events/1",
         },
-      ]
+      ],
+    },
+    "our-vision": {
+      tag: "Our",
+      title: "Vision",
+      tabs: [
+        {
+          title: "Learn",
+          content:
+            "Innovation Day menyediakan wadah yang secara gratis bisa diakses semua orang untuk <b>belajar</b> berbagai ilmu menarik yang relevan dengan kebutuhan saat ini. ",
+        },
+        {
+          title: "Share",
+          content:
+            "Innovation Day berkomitmen untuk berbagi kebermanfaatan dengan menyediakan wadah kepada para ahli untuk <b>membagikan</b> ilmu yang dimiliki agar bisa menyalurkan wawasan kepada banyak orang.",
+        },
+        {
+          title: "Innovate",
+          content:
+            "Innovation Day berpartisipasi aktif dalam menumbuhkan jiwa kreatif, <b>inovatif</b>, dan solutif generasi bangsa dalam rangka mendukung terciptanya sumber daya manusia yang berkualitas dan mampu  menjawab tantangan zaman dengan inovasi yang dimiliki.",
+        },
+      ],
     },
   },
 };
