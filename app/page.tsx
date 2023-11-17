@@ -1,4 +1,4 @@
-import { Hero, LatestEvent, OurEvents, OurVision } from "./sections";
+import { BeOurSpeaker, Hero, LatestEvent, OurEvents, OurVision } from "./sections";
 
 export default function Home() {
   return (
@@ -7,6 +7,7 @@ export default function Home() {
       <OurEvents />
       <LatestEvent />
       <OurVision />
+      <BeOurSpeaker />
     </main>
   );
 }

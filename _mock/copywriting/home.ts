@@ -148,5 +148,41 @@ export const home = {
         },
       ],
     },
+    speaker: {
+      tag: "Benefit",
+      title: "Become a Speaker at Innovation Day",
+      description:
+        "Innovation Day membuka peluang bagi siapa pun yang berminat menjadi pembicara di event Innovation Day. Berikut benefit yang akan Sobat Innov rasakan sebagai speaker Innovation Day.",
+      cta: {
+        label: "Learn More",
+        url: "/speakers",
+      },
+      benefits: [
+        {
+          index: 1,
+          keyword: "Koneksi Bersama Para Ahli",
+          description:
+          "Dapatkan kesempatan untuk berjejaring dan berinovasi bersama para ahli dibidangnya.",
+        },
+        {
+          index: 2,
+          keyword: "Sertifikat dan Merchandise",
+          description:
+          "Dapatkan sertifikat sebagai bentuk penghargaan serta merchandise menarik sebagai kenangan yang berharga.",
+        },
+        {
+          index: 3,
+          keyword: "Pengalaman Belajar, Berbagi, dan Berinovasi",
+          description:
+          "Dapatkan pengalaman berharga untuk memberikan sebesar-besarnya manfaat  kepada sebanyak-banyaknya orang dan seluas-luasnya cakupan.",
+        },
+        {
+          index: 4,
+          keyword: "Dukungan Teknis Tim Innovation Day",
+          description:
+            "Dapatkan dukungan teknis tim Innovation Day untuk membantu kamu dalam berbagi ilmu dan memberikan pesan yang mengesankan kepada banyak orang.",
+        },
+      ],
+    },
   },
 };
