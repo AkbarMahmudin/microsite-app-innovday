@@ -33,7 +33,7 @@ const SwiperInfinite = ({
     <Swiper
       direction={direction}
       slidesPerView={"auto"}
-      spaceBetween={10}
+      spaceBetween={30}
       freeMode={true}
       scrollbar={false}
       mousewheel={true}

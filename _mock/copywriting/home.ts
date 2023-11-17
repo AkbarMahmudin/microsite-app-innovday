@@ -184,5 +184,35 @@ export const home = {
         },
       ],
     },
+    'our-reviews': {
+      tag: "Our Reviews",
+      title: "What the Speakers Say",
+      description:
+        "Temukan beberapa ulasan mereka tentang pengalamannya menjadi pembicara di Innovation Day. ",
+      cta: {
+        label: "Be Our Speaker",
+        url: "/speakers",
+      },
+      testimonies: [
+        {
+          name: "John Doe",
+          job: "CEO of ABC",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+        },
+        {
+          name: "John Doe",
+          job: "CEO of ABC",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+        },
+        {
+          name: "John Doe",
+          job: "CEO of ABC",
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+        },
+      ],
+    }
   },
 };

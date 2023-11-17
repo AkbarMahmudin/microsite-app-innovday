@@ -18,6 +18,11 @@
   transition-timing-function:linear !important;
 }
 
+.swiper-vertical > .swiper-wrapper {
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Desktop */
 @media screen and (min-width: 768px) {
   .swiper-slide {
