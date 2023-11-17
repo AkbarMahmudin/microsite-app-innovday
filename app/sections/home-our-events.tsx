@@ -12,7 +12,6 @@ import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { SwiperSlider } from "@/components/custom/swiper";
-import useBreakpoint from "@/hooks/useBreakPoint";
 
 const cp = home.content["our-events"];
 
@@ -31,8 +30,6 @@ const Event = ({
   type: "innovation-day" | "in-talks";
   direction?: "left" | "right";
 }) => {
-  const breakpoint = useBreakpoint();
-
   return (
     <div
       className={`flex lg:flex-row flex-col lg:justify-between justify-start items-center lg:gap-10 gap-4 ${
@@ -64,8 +61,8 @@ const Event = ({
       <div className="lg:w-3/5">
         <SwiperSlider
           data={cp[type].preview}
-          navigationPosition={breakpoint === 'lg' ? direction : "right"}
-          fromLast={direction === "left"}
+          navigationPosition={screen.width > 768 ? direction : "right"}
+          fromLast={screen.width > 768 && direction === "left"}
         />
       </div>
     </div>
