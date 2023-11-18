@@ -3,9 +3,6 @@
 import React from "react";
 import Link from "next/link";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode, Mousewheel, Scrollbar } from "swiper/modules";
-
 // copywrite
 import { home } from "@/_mock/copywriting";
 
@@ -36,7 +33,7 @@ const BeOurSpeaker = () => {
         </div>
         <p className="text-sm font-normal self-stretch">{cp.description}</p>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 items-center lg:gap-20">
+        <div className="flex flex-col lg:grid lg:grid-cols-2 items-center lg:gap-20 w-full">
           <div className="justify-center items-center inline-flex relative w-fit mx-auto">
             <div className="w-[240px] h-[220px] lg:w-[368px] lg:h-[348px] bg-gradient-to-br from-teal-500 to-primary rounded-xl  backdrop-blur-[110.64px] absolute bottom-3 right-0"></div>
             <div className="relative">

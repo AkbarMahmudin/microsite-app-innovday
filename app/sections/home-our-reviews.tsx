@@ -12,7 +12,7 @@ const cp = home.content["our-reviews"];
 
 const OurReviews = () => {
   return (
-    <section className="container bg-gradient-to-br from-teal-500 text-white to-primary flex md:flex-row flex-col justify-center md:items-center items-start gap-4">
+    <section className="container min-w-full bg-gradient-to-br from-teal-500 text-white to-primary flex md:flex-row flex-col justify-center md:items-center items-start gap-4">
       <div className="reviews__description md:w-2/5 flex flex-col justify-center items-start gap-4">
         <Badge size="small" className="bg-white bg-opacity-70">
           {cp.tag}
