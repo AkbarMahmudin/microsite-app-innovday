@@ -162,19 +162,19 @@ export const home = {
           index: 1,
           keyword: "Koneksi Bersama Para Ahli",
           description:
-          "Dapatkan kesempatan untuk berjejaring dan berinovasi bersama para ahli dibidangnya.",
+            "Dapatkan kesempatan untuk berjejaring dan berinovasi bersama para ahli dibidangnya.",
         },
         {
           index: 2,
           keyword: "Sertifikat dan Merchandise",
           description:
-          "Dapatkan sertifikat sebagai bentuk penghargaan serta merchandise menarik sebagai kenangan yang berharga.",
+            "Dapatkan sertifikat sebagai bentuk penghargaan serta merchandise menarik sebagai kenangan yang berharga.",
         },
         {
           index: 3,
           keyword: "Pengalaman Belajar, Berbagi, dan Berinovasi",
           description:
-          "Dapatkan pengalaman berharga untuk memberikan sebesar-besarnya manfaat  kepada sebanyak-banyaknya orang dan seluas-luasnya cakupan.",
+            "Dapatkan pengalaman berharga untuk memberikan sebesar-besarnya manfaat  kepada sebanyak-banyaknya orang dan seluas-luasnya cakupan.",
         },
         {
           index: 4,
@@ -184,7 +184,7 @@ export const home = {
         },
       ],
     },
-    'our-reviews': {
+    "our-reviews": {
       tag: "Our Reviews",
       title: "What the Speakers Say",
       description:
@@ -213,6 +213,15 @@ export const home = {
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
         },
       ],
-    }
+    },
+    "regist-speaker": {
+      title: "Ayo gabung menjadi pembicara di Innovation Day!",
+      description:
+        "Sobat Innov tertarik menjadi speakers di Innovation Day? Ayo lengkapi data diri kamu dengan mengisi form di bawah ini.",
+      cta: {
+        label: "Regist Speaker Innovation Day",
+        url: "/speakers",
+      },
+    },
   },
 };
