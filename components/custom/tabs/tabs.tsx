@@ -21,7 +21,7 @@ const CustomTabsList = ({ titles, onChangeTab }: CustomTabsListProps) => {
     <TabsList
       className={`grid w-full grid-cols-${
         titles.length ?? 2
-      } bg-transparent mb-4`}
+      } bg-transparent mb-4 md:text-2xl`}
     >
       {titles.map((title, index) => (
         <TabsTrigger
@@ -42,7 +42,7 @@ const CustomTabsContent = ({ data }: Props) => {
     <TabsContent
       key={index}
       value={item.title.toLocaleLowerCase()}
-      className="text-sm font-normal"
+      className="text-sm md:text-base font-normal"
     >
       <p
         dangerouslySetInnerHTML={

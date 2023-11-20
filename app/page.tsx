@@ -1,4 +1,4 @@
-import { BeOurSpeaker, Hero, LatestEvent, OurEvents, OurReviews, OurVision, RegistSpeaker } from "./sections";
+import { BeOurSpeaker, Hero, LatestEvent, OurEvents, OurReviews, OurSocialMedia, OurVision, RegistSpeaker } from "./sections";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
       <BeOurSpeaker />
       <OurReviews />
       <RegistSpeaker />
+      <OurSocialMedia />
     </main>
   );
 }

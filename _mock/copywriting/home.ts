@@ -223,5 +223,38 @@ export const home = {
         url: "/speakers",
       },
     },
+    "our-social-media": {
+      tag: "Get In Touch",
+      title: "Follow Our Social Media",
+      description:
+        "Ayo ikuti akun media sosial kami untuk tetap terhubung dan selalu update dengan event, informasi, dan konten menarik Innovation Day.",
+      instagram: {
+        avatarUrl: "/logo/ig-profile.png",
+        username: "innovationday.ddbtelkom",
+        name: "Innovation Day Telkom DDB",
+        bio: "Official account of Innovation Day by Telkom Directorate Digital Business. Together let's #LearnShareInnovate",
+        cta: {
+          label: "Follow Us",
+          url: "https://www.instagram.com/innovationday.ddbtelkom/",
+        },
+        posts: [
+          "/instagram-post/1.png",
+          "/instagram-post/2.png",
+          "/instagram-post/3.png",
+        ],
+      },
+      spotify: {
+        label: "Podcast",
+        name: "InTalks by InnovationDay DDB Telkom",
+        avatarUrl: "/logo/intalks.png",
+        cta: {
+          label: "Listen Now",
+          url: "https://open.spotify.com/show/5Ry47U1mtCrhf5EEuJQL88?si=2c70f568a1c74ea0",
+        },
+        embed: `
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/5Ry47U1mtCrhf5EEuJQL88/" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        `,
+      },
+    },
   },
 };

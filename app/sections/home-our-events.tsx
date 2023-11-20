@@ -19,7 +19,7 @@ const EventDescription = () => (
   <div className="flex flex-col justify-center items-start gap-4">
     <Badge size="small">{cp.tag}</Badge>
     <h2 className="text-2xl font-bold">{cp.title}</h2>
-    <p className="text-sm font-normal self-stretch">{cp.description}</p>
+    <p className="text-sm md:text-base font-normal self-stretch">{cp.description}</p>
   </div>
 );
 

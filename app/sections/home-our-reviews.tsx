@@ -18,7 +18,7 @@ const OurReviews = () => {
           {cp.tag}
         </Badge>
         <h2 className="text-2xl font-bold">{cp.title}</h2>
-        <p className="text-sm font-normal self-stretch">{cp.description}</p>
+        <p className="text-sm md:text-base font-normal self-stretch">{cp.description}</p>
         <Link
           href={cp.cta.url}
           className={buttonVariants({

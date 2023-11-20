@@ -76,7 +76,7 @@ const LatestEvent = () => {
         >
           {cp.cta.label}
         </Link>
-        <p className="text-sm font-normal self-stretch">{cp.description}</p>
+        <p className="text-sm md:text-base font-normal self-stretch">{cp.description}</p>
       </div>
 
       <EventList data={cp.events} />

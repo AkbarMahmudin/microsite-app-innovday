@@ -31,7 +31,7 @@ const BeOurSpeaker = () => {
             {cp.cta.label}
           </Link>
         </div>
-        <p className="text-sm font-normal self-stretch">{cp.description}</p>
+        <p className="text-sm md:text-base font-normal self-stretch">{cp.description}</p>
 
         <div className="flex flex-col lg:grid lg:grid-cols-2 items-center lg:gap-20 w-full">
           <div className="justify-center items-center inline-flex relative w-fit mx-auto">
