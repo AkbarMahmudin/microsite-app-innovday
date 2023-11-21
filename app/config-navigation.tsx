@@ -20,6 +20,10 @@ export const useNavData = () => {
           title: "InTalks",
           path: paths.inTalks,
         },
+        {
+          title: "All Events",
+          path: paths.event.root,
+        }
       ],
     },
     {

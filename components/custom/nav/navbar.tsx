@@ -35,14 +35,22 @@ import { Button } from "@/components/ui/button";
 import HumbergerMenu from "./humberger-menu";
 import { getKeyControl } from "@/lib/user-agent";
 import { Announcement, AnnouncementProps } from "../announcement";
+import { usePathname } from "next/navigation";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
 >(({ className, title, children, ...props }, ref) => {
+  const pathname = usePathname();
+  const isActive = pathname === props.href;
+
   return (
     <li>
-      <NavigationMenuLink asChild>
+      <NavigationMenuLink
+        className={`${isActive ? "text-primary" : ""}`}
+        active={isActive}
+        asChild
+      >
         <a
           ref={ref}
           className={cn(
@@ -62,8 +70,10 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-const renderMenutItems = (menuItems: any) =>
-  menuItems.map((item: any) => (
+const MenuItems = ({ items }: any) => {
+  const pathname = usePathname();
+
+  return items.map((item: any) => (
     <NavigationMenuItem key={item.title} className="w-full">
       {item.children ? (
         <>
@@ -106,14 +116,19 @@ const renderMenutItems = (menuItems: any) =>
           </div>
         </>
       ) : (
-        <Link href={item.path} legacyBehavior passHref>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+        <Link
+          href={item.path}
+          legacyBehavior
+          passHref
+        >
+          <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${pathname === item.path ? "text-primary" : ""}`}>
             {item.title}
           </NavigationMenuLink>
         </Link>
       )}
     </NavigationMenuItem>
   ));
+};
 
 type Props = {
   data: any;
@@ -128,7 +143,7 @@ export default function Navbar({ data, announcement }: Props) {
     setKeyControl(getKeyControl());
   }, [keyControl]);
 
-  const menuItems = renderMenutItems(data);
+  // const menuItems = renderMenutItems(data);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -154,11 +169,17 @@ export default function Navbar({ data, announcement }: Props) {
         />
 
         <NavigationMenu className="hidden lg:block">
-          <NavigationMenuList>{menuItems}</NavigationMenuList>
+          <NavigationMenuList>
+            <MenuItems items={data} />
+          </NavigationMenuList>
           <NavigationMenuViewport />
         </NavigationMenu>
 
-        <HumbergerMenu menu={menuItems} side="right" onOpen={setOpen} />
+        <HumbergerMenu
+          menu={<MenuItems items={data} />}
+          side="right"
+          onOpen={setOpen}
+        />
 
         <Button
           variant="outline"

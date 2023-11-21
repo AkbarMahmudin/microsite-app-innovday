@@ -97,3 +97,7 @@
     top: 0;
   }
 }
+
+.NavigationMenuLink[data-active] {
+  text-decoration: 'underline';
+}

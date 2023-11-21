@@ -4,7 +4,7 @@ import { NavigationMenu, NavigationMenuList, NavigationMenuViewport } from "../.
 import React from "react";
 
 type Props = {
-  menu: React.ReactNode[];
+  menu: React.ReactNode;
   side?: "top" | "bottom" | "left" | "right";
   onOpen(prev: any): any;
 };
