@@ -80,7 +80,7 @@ const MenuItems = ({ items }: any) => {
           <Accordion
             type="single"
             collapsible
-            className="px-4 text-sm font-medium block md:hidden"
+            className="px-4 text-sm font-medium block lg:hidden"
           >
             <AccordionItem value={item.title}>
               <AccordionTrigger className="w-full">
@@ -99,7 +99,7 @@ const MenuItems = ({ items }: any) => {
             </AccordionItem>
           </Accordion>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
             <NavigationMenuContent>
               <ul className="w-[160px] py-2">

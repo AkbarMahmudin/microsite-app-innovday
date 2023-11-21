@@ -19,16 +19,20 @@ const EventDescription = () => (
   <div className="flex flex-col justify-center items-start gap-4">
     <Badge size="small">{cp.tag}</Badge>
     <h2 className="text-2xl font-bold">{cp.title}</h2>
-    <p className="text-sm md:text-base font-normal self-stretch">{cp.description}</p>
+    <p className="text-sm md:text-base font-normal self-stretch">
+      {cp.description}
+    </p>
   </div>
 );
 
 const Event = ({
   type,
   direction = "left",
+  fromLast = false,
 }: {
   type: "innovation-day" | "in-talks";
   direction?: "left" | "right";
+  fromLast?: boolean;
 }) => {
   return (
     <div
@@ -61,8 +65,8 @@ const Event = ({
       <div className="lg:w-3/5">
         <SwiperSlider
           data={cp[type].preview}
-          navigationPosition={screen.width > 768 ? direction : "right"}
-          fromLast={screen.width > 768 && direction === "left"}
+          navigationPosition={direction}
+          fromLast={fromLast}
         />
       </div>
     </div>
@@ -74,7 +78,7 @@ const OurEvents = () => {
     <section className="container flex flex-col gap-20 min-w-full bg-[url('/background/our-event.png')] bg-no-repeat lg:bg-[length:300px] bg-[length:200px] lg:bg-[right_bottom_14rem] bg-[right_bottom_30rem]">
       <EventDescription />
       <Event direction="right" type="innovation-day" />
-      <Event type="in-talks" />
+      <Event direction="left" fromLast type="in-talks" />
     </section>
   );
 };

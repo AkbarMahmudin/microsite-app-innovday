@@ -39,7 +39,7 @@ const EmbedVideo = () => (
 
 const Hero = () => {
   return (
-    <section className="hero container grid lg:grid-cols-2 grid-cols-1 justify-between items-center min-h-[calc(100vh-12rem)] min-w-full bg-bg-hero bg-cover">
+    <section className="hero container grid lg:grid-cols-2 grid-cols-1 justify-between items-center min-h-[calc(100vh-12rem)] max-h-screen min-w-full bg-bg-hero bg-cover">
       <div className="hero__content lg:order-first order-last">
         <div className="hero__header mb-5">
           <h1 className="md:text-[32px] text-2xl font-bold leading-[64px]">

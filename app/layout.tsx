@@ -48,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar data={useNavData()} announcement={announcement} />
+        <Navbar data={useNavData()} />
         {children}
         <Footer
           navData={navData as any}
