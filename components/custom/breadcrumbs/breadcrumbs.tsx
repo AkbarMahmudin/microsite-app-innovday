@@ -14,7 +14,7 @@ const Separator = ({ index }: { index: number }) => {
 type Props = {
   links: {
     name: string;
-    href?: string;
+    url?: string;
   }[];
 };
 
@@ -31,7 +31,7 @@ const Breadcrumbs = ({ links }: Props) => {
           className="flex flex-row md:gap-1 gap-0.5 justify-start items-center"
         >
           <Separator index={index} />
-          <LinkItem href={link.href} activeLast={index === links.length - 1}>
+          <LinkItem href={link.url} activeLast={index === links.length - 1}>
             {linkIcons[link.name.toLowerCase()] ? (
               <Icon
                 icon={linkIcons[link.name.toLowerCase()]}
