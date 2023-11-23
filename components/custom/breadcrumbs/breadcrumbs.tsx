@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { ChevronRight } from "lucide-react";
 import React from "react";
 import { LinkItem } from ".";
+import { cn } from "@/lib/utils";
 
 const Separator = ({ index }: { index: number }) => {
   return index !== 0 ? (
@@ -16,15 +17,21 @@ type Props = {
     name: string;
     url?: string;
   }[];
+  className?: string;
 };
 
-const Breadcrumbs = ({ links }: Props) => {
+const Breadcrumbs = ({ links, className }: Props) => {
   const linkIcons = {
     home: "jam:home",
   } as any;
 
   return (
-    <div className="flex flex-row justify-start items-center md:gap-1 gap-0.5 font-medium md:text-sm text-xs">
+    <div
+      className={cn(
+        "flex flex-row justify-start items-center md:gap-1 gap-0.5 font-medium md:text-sm text-xs",
+        className
+      )}
+    >
       {links.map((link, index) => (
         <span
           key={index}

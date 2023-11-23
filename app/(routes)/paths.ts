@@ -1,8 +1,8 @@
 export const paths = {
   home: '/',
-  event: {
-    root: '/event',
-    detail: (idOrSlug: string | number) => `/event/${idOrSlug}`,
+  events: {
+    root: '/events',
+    detail: (idOrSlug: string | number) => `/events/${idOrSlug}`,
   },
   innovationDay: '/innovation-day',
   inTalks: '/in-talks',

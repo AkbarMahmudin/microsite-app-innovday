@@ -49,7 +49,12 @@ const FilterForm = () => {
         </div>
         <div className="grid w-full items-center gap-2">
           <Label htmlFor="hastag">Hastag</Label>
-          <Input id="hastag" placeholder="#tech" className="w-full" />
+          <Input
+            id="hastag"
+            placeholder="#tech"
+            className="w-full"
+            icon={<Icon icon="basil:search-outline" className="w-6 h-6" />}
+          />
         </div>
         <div className="flex flex-col w-full items-center gap-2 pt-6">
           <Button className="w-full">Terapkan</Button>
@@ -64,8 +69,12 @@ const FilterForm = () => {
 
 const Toolbar = () => {
   return (
-    <div className="min-w-full grid grid-rows-2 gap-5 md:gap-0 md:flex md:justify-between">
-      <Input placeholder="Search" className="md:w-1/4" />
+    <div className="min-w-full md:h-12 grid grid-rows-2 gap-5 md:gap-0 md:flex md:justify-between">
+      <Input
+        placeholder="Search"
+        className="w-full"
+        icon={<Icon icon="basil:search-outline" className="w-6 h-6" />}
+      />
 
       <div className="toolbar-filter flex flex-row justify-between items-center gap-2">
         <Select>

@@ -11,7 +11,7 @@ import {
 
 export default function Home() {
   return (
-    <main className="py-24 flex flex-col gap-12">
+    <>
       <Hero />
       <OurEvents />
       <LatestEvent />
@@ -20,6 +20,8 @@ export default function Home() {
       <OurReviews />
       <RegistSpeaker />
       <OurSocialMedia />
-    </main>
+    </>
+    // <main className="py-24 flex flex-col gap-12">
+    // </main>
   );
 }

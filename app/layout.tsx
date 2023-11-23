@@ -48,8 +48,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <Navbar data={useNavData()} />
-        {children}
+        <Navbar data={useNavData()} announcement={announcement} />
+
+        <main
+          className={`flex flex-col gap-5 ${
+            announcement ? "md:pt-40 pt-32" : "md:pt-24 pt-14"
+          } pb-24`}
+        >
+          {children}
+        </main>
+        
         <Footer
           navData={navData as any}
           contact={CONTACTS}

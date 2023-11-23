@@ -10,8 +10,12 @@ export const useNavData = () => {
     },
     {
       title: "Our Events",
-      path: paths.event.root,
+      path: paths.events.root,
       children: [
+        {
+          title: "All Events",
+          path: paths.events.root,
+        },
         {
           title: "Innovation Day",
           path: paths.innovationDay,
@@ -20,10 +24,6 @@ export const useNavData = () => {
           title: "InTalks",
           path: paths.inTalks,
         },
-        {
-          title: "All Events",
-          path: paths.event.root,
-        }
       ],
     },
     {
