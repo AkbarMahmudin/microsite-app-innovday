@@ -26,7 +26,7 @@ const FilterForm = () => {
 
   return (
     <SheetContent
-      side={breakpoint === "lg" || breakpoint === "xl" ? "right" : "bottom"}
+      side={breakpoint === "lg" || breakpoint === "xl" || breakpoint === "2xl" ? "right" : "bottom"}
     >
       <SheetHeader>
         <SheetTitle>Filters</SheetTitle>

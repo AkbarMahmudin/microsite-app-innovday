@@ -21,7 +21,5 @@ export default function Home() {
       <RegistSpeaker />
       <OurSocialMedia />
     </>
-    // <main className="py-24 flex flex-col gap-12">
-    // </main>
   );
 }
