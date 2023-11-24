@@ -21,8 +21,6 @@ const Description = ({ title, description }: Props) => {
       <p className="text-sm md:text-base font-normal md:leading-normal">
         {description}
       </p>
-
-      <Toolbar />
     </section>
   );
 };

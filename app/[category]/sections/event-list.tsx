@@ -2,12 +2,8 @@
 
 import React from "react";
 
-// copywrite
-// import { event } from "@/_mock/copywriting";
+// components
 import { CardItem } from "@/components/custom/card";
-import { Paginate } from "@/components/custom/pagination";
-
-// const cp = event;
 
 const EventList = ({ events = [] }: { events: any }) => {
   return (
@@ -17,7 +13,6 @@ const EventList = ({ events = [] }: { events: any }) => {
           <CardItem key={index} {...event} />
         ))}
       </section>
-      <Paginate page={1} pageCount={10} onPageChange={() => {}} perPage={5} />
     </>
   );
 };

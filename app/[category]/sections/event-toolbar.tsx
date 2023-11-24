@@ -1,105 +1,71 @@
 "use client";
 
+import React from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Select,
   SelectContent,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import useBreakpoint from "@/hooks/useBreakPoint";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import React from "react";
+import { FilterForm } from "./components";
+import useQueryParams from "@/hooks/useQueryParams";
+import { SelectGroup } from "@radix-ui/react-select";
 
-const FilterForm = () => {
-  const breakpoint = useBreakpoint();
-
-  return (
-    <SheetContent
-      side={breakpoint === "lg" || breakpoint === "xl" || breakpoint === "2xl" ? "right" : "bottom"}
-    >
-      <SheetHeader>
-        <SheetTitle>Filters</SheetTitle>
-      </SheetHeader>
-
-      <div className="px-1 py-3 flex flex-col gap-5">
-        <div className="grid w-full items-center gap-2">
-          <Label htmlFor="category">Category</Label>
-          <Select>
-            <SelectTrigger id="category" className="w-full">
-              <SelectValue placeholder="Category" />
-            </SelectTrigger>
-            <SelectContent className="w-full">
-              <SelectItem value="all">All</SelectItem>
-              <SelectItem value="innovation-day">Innovation Day</SelectItem>
-              <SelectItem value="intalks">InTalks</SelectItem>
-              <SelectItem value="workshop">Workshop</SelectItem>
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="grid w-full items-center gap-2">
-          <Label htmlFor="hastag">Hastag</Label>
-          <Input
-            id="hastag"
-            placeholder="#tech"
-            className="w-full"
-            icon={<Icon icon="basil:search-outline" className="w-6 h-6" />}
-          />
-        </div>
-        <div className="flex flex-col w-full items-center gap-2 pt-6">
-          <Button className="w-full">Terapkan</Button>
-          <Button variant="outline" type="reset" className="w-full">
-            Reset
-          </Button>
-        </div>
-      </div>
-    </SheetContent>
-  );
+type Props = {
+  onSearch: (value: string) => void;
+  onSort: (value: string) => void;
+  onFilter: (tags: string[], category: string) => void;
 };
 
-const Toolbar = () => {
+const Toolbar = ({ onSearch, onSort, onFilter }: Props) => {
+
+  const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSearch(e.currentTarget.value);
+    }
+  };
+
   return (
-    <div className="min-w-full md:h-12 grid grid-rows-2 gap-5 md:gap-0 md:flex md:justify-between">
+    <div className="container min-w-full h-full grid grid-rows-2 gap-5 md:gap-0 md:flex md:justify-between">
       <Input
         placeholder="Search"
-        className="w-full"
+        className="w-1/2 h-full"
         icon={<Icon icon="basil:search-outline" className="w-6 h-6" />}
+        onKeyUp={handleSearch}
       />
 
-      <div className="toolbar-filter flex flex-row justify-between items-center gap-2">
-        <Select>
+      <div className="toolbar-filter flex flex-row justify-between items-center gap-3">
+        {/* Sort */}
+        <Select onValueChange={(value) => onSort(value)}>
           <SelectTrigger>
-            <SelectValue placeholder="Latest" />
+            <SelectValue placeholder="Sort" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="Latest">Latest</SelectItem>
-            <SelectItem value="Oldest">Oldest</SelectItem>
+            <SelectGroup>
+              <SelectLabel>Sort</SelectLabel>
+              <SelectItem value="latest">Latest</SelectItem>
+              <SelectItem value="oldest">Oldest</SelectItem>
+            </SelectGroup>
           </SelectContent>
         </Select>
 
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button
-              variant="outline"
-              className="w-full flex justify-between border border-input rounded-md text-black"
-            >
-              <span className="text-sm font-medium">Filter</span>
-              <Icon icon="bi:filter" className="w-5 h-5" />
-            </Button>
-          </SheetTrigger>
-
-          <FilterForm />
-        </Sheet>
+        {/* Filter */}
+        <FilterForm onFilter={onFilter}>
+          <Button
+            variant="outline"
+            className="w-full flex justify-between border border-input rounded-md text-black"
+          >
+            <span className="text-sm font-medium">Filter</span>
+            <Icon icon="bi:filter" className="w-5 h-5" />
+          </Button>
+        </FilterForm>
       </div>
     </div>
   );

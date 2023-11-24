@@ -15,6 +15,7 @@ export const badgeVariants = cva(
         default: "bg-teal-600 bg-opacity-20 text-primary font-normal",
         secondary: "bg-teal-600 bg-opacity-50 text-white font-semibold",
         tertiary: "bg-white text-primary font-normal",
+        danger: "bg-red-600 bg-opacity-20 text-red-600 font-normal",
       },
       size: {
         default: "text-xl",

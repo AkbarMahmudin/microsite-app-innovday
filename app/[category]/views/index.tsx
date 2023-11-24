@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 // components
 import { Breadcrumbs } from "@/components/custom/breadcrumbs";
@@ -10,9 +10,14 @@ import * as copywrite from "@/_mock/copywriting";
 
 // utils
 import kebabToCamel from "@/lib/kebab-to-camel";
+import { Toolbar } from "../sections";
+import useQueryParams from "@/hooks/useQueryParams";
+import { Paginate } from "@/components/custom/pagination";
 
 const EventView = ({ category }: { category: string }) => {
   const router = useRouter();
+  const pathname = usePathname();
+  const query = useQueryParams();
 
   const categoryFormated = kebabToCamel(category);
 
@@ -37,11 +42,51 @@ const EventView = ({ category }: { category: string }) => {
 
   const events = content[category];
 
+  const handleOnSearch = (value: string) => {
+    value ? query.set("search", encodeURI(value)) : query.delete("search");
+
+    router.replace(`${pathname}?${query.toString()}`);
+  };
+
+  const handleOnSort = (value: string) => {
+    value ? query.set("sort", value) : query.delete("sort");
+
+    router.replace(`${pathname}?${query.toString()}`);
+  };
+
+  const handleOnPageChange = ({ selected }: { selected: number }) => {
+    const page = selected + 1;
+    page !== 1 ? query.set("page", page.toString()) : query.delete("page");
+
+    router.replace(`${pathname}?${query.toString()}`, {
+      scroll: true,
+    });
+  };
+
+  const handleOnFilter = (tags: string[], category: string) => {
+    tags.length ? query.set("tags", tags.join(",")) : query.delete("tags");
+    category ? query.set("category", category) : query.delete("category");
+
+    router.replace(`${pathname}?${query.toString()}`);
+  };
+
   return (
     <>
       <Breadcrumbs className="container" links={breadcrumbs || []} />
       <Description title={title} description={description} />
+      <Toolbar
+        onSearch={handleOnSearch}
+        onSort={handleOnSort}
+        onFilter={handleOnFilter}
+      />
       <EventList events={events} />
+      <Paginate
+        page={0}
+        pageCount={10}
+        onPageChange={handleOnPageChange}
+        perPage={5}
+        className="scroll-smooth"
+      />
     </>
   );
 };

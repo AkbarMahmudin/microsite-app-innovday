@@ -11,7 +11,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, icon, ...props }, ref) => {
     if (icon) {
       return (
-        <div className="relative h-full">
+        <div className="relative h-full w-full">
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 p-3 text-gray-400">
             {icon}
           </div>
