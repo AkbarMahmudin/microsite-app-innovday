@@ -22,8 +22,6 @@ const DetailEventView = ({ event }: Props) => {
     tags,
   } = event;
 
-  console.log(event);
-
   return (
     <>
       <Breadcrumbs
@@ -40,22 +38,27 @@ const DetailEventView = ({ event }: Props) => {
             url: "/events/event-name",
           },
         ]}
-        className="px-2 pt-4"
+        className="px-2 pt-4 md:container"
       />
-      <Header youtubeSrc={youtubeSrc} />
-      <Content
-        title={title}
-        content={content}
-        publishedAt={publishedAt}
-        slidoSrc={slidoSrc}
-      />
-      <DetailInformation
-        startDate={startDate}
-        endDate={endDate}
-        speaker={speaker}
-        moderator={moderator}
-        tags={tags}
-      />
+      <Header youtubeSrc={youtubeSrc} slidoSrc={slidoSrc} />
+
+      <div className="lg:container lg:grid grid-cols-3 gap-4 min-w-full">
+        <Content
+          title={title}
+          content={content}
+          publishedAt={publishedAt}
+          slidoSrc={slidoSrc}
+          className="col-span-2"
+        />
+
+        <DetailInformation
+          startDate={startDate}
+          endDate={endDate}
+          speaker={speaker}
+          moderator={moderator}
+          tags={tags}
+        />
+      </div>
     </>
   );
 };

@@ -18,7 +18,7 @@ const SlidoEmbed = ({ src, title, className }: Props) => {
         width="100%"
         frameBorder="0"
         style={{
-          minHeight: "calc(100vh - 80px)",
+          maxHeight: "calc(100vh - 80px)",
         }}
         title={title}
         className={className}

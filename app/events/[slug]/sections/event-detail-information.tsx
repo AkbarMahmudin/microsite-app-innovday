@@ -10,10 +10,10 @@ const ListItem = ({ icon, title, value }: any) => (
   <li className="flex gap-2 items-start">
     <Icon icon={icon} width={28} className="text-primary" />
     <div className="flex-1">
-      <span className="block text-[11px] font-normal text-gray-500">
+      <span className="block text-[11px] md:text-sm font-normal text-gray-500">
         {title}
       </span>
-      <span className="block text-xs font-normal">{value}</span>
+      <span className="block text-xs md:text-base font-normal">{value}</span>
     </div>
   </li>
 );
@@ -67,7 +67,7 @@ const DetailInformation = ({
   tags,
 }: Props) => {
   return (
-    <section className="container flex flex-col gap-4">
+    <aside className="lg:px-0 container flex flex-col gap-4">
       <Separator />
 
       <h3 className="text-base font-bold leading-tight">Detail Informasi</h3>
@@ -105,7 +105,7 @@ const DetailInformation = ({
       <Separator />
 
       <FeedBack />
-    </section>
+    </aside>
   );
 };
 

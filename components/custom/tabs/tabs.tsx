@@ -45,13 +45,13 @@ const CustomTabsContent = ({ data }: Props) => {
       className="text-sm md:text-base font-normal"
     >
       {typeof item.content !== "string" ? item.content : (
-          <p
+          <div
             dangerouslySetInnerHTML={
               typeof item.content === "string"
                 ? { __html: item.content }
                 : undefined
             }
-          ></p>
+          ></div>
       )}
     </TabsContent>
   ));
