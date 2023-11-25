@@ -44,13 +44,15 @@ const CustomTabsContent = ({ data }: Props) => {
       value={item.title.toLocaleLowerCase()}
       className="text-sm md:text-base font-normal"
     >
-      <p
-        dangerouslySetInnerHTML={
-          typeof item.content === "string"
-            ? { __html: item.content }
-            : undefined
-        }
-      ></p>
+      {typeof item.content !== "string" ? item.content : (
+          <p
+            dangerouslySetInnerHTML={
+              typeof item.content === "string"
+                ? { __html: item.content }
+                : undefined
+            }
+          ></p>
+      )}
     </TabsContent>
   ));
 };

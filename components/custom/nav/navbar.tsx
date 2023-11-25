@@ -158,7 +158,7 @@ export default function Navbar({ data, announcement }: Props) {
   }, []);
 
   return (
-    <header className="fixed z-10 w-full bg-transparent backdrop-blur-3xl">
+    <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-3xl">
       {announcement && <Announcement {...announcement} />}
       <nav className="container min-w-full justify-between items-center inline-flex backdrop-blur-[50px] bg-opacity-80 bg-cyan-50 shadow">
         <Image

@@ -48,12 +48,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className} suppressHydrationWarning={true}>
-        <Navbar data={useNavData()} announcement={announcement} />
+        <Navbar data={useNavData()} />
 
         <main
-          className={`flex flex-col gap-3 ${
-            announcement ? "md:pt-40 pt-32" : "md:pt-24 pt-14"
-          } pb-24`}
+          className={`flex flex-col gap-3 pb-24`}
         >
           {children}
         </main>

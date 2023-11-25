@@ -1,0 +1,68 @@
+const EVENTS = [
+  {
+    id: 1,
+    thumbnailUrl: "/valid thumbnail.png",
+    title: "Innovation Day #1",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+    tags: ["innovation", "day"],
+    publishedAt: "2021-01-01",
+    speaker: "John Doe",
+    moderator: "Jane Doe",
+    startDate: "2021-01-01T09:00:00.000Z",
+    endDate: "2021-01-01T12:00:00.000Z",
+    slidoId: "et1humAMJM1kAY6y6jxaQz",
+    youtubeId: "v79I6c7fWtA",
+    date: "2021-01-01",
+  },
+  {
+    id: 2,
+    thumbnailUrl: "/valid thumbnail.png",
+    title: "Innovation Day #2",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+    tags: ["innovation", "day"],
+    publishedAt: "2021-01-01",
+    speaker: "John Doe",
+    moderator: "Jane Doe",
+    startDate: "2021-01-01T09:00:00.000Z",
+    endDate: "2021-01-01T12:00:00.000Z",
+    slidoId: "et1humAMJM1kAY6y6jxaQz",
+    youtubeId: "v79I6c7fWtA",
+    date: "2021-01-01",
+  },
+  {
+    id: 3,
+    thumbnailUrl: "/valid thumbnail.png",
+    title: "Innovation Day #3",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+    tags: ["innovation", "day"],
+    publishedAt: "2021-01-01",
+    speaker: "John Doe",
+    moderator: "Jane Doe",
+    startDate: "2021-01-01T09:00:00.000Z",
+    endDate: "2021-01-01T12:00:00.000Z",
+    slidoId: "et1humAMJM1kAY6y6jxaQz",
+    youtubeId: "v79I6c7fWtA",
+    date: "2021-01-01",
+  },
+  {
+    id: 4,
+    thumbnailUrl: "/valid thumbnail.png",
+    title: "Innovation Day #4",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
+    tags: ["innovation", "day"],
+    publishedAt: "2021-01-01",
+    speaker: "John Doe",
+    moderator: "Jane Doe",
+    startDate: "2021-01-01T09:00:00.000Z",
+    endDate: "2021-01-01T12:00:00.000Z",
+    slidoId: "et1humAMJM1kAY6y6jxaQz",
+    youtubeId: "v79I6c7fWtA",
+    date: "2021-01-01",
+  },
+]
+
+export default EVENTS

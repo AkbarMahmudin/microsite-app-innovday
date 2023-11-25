@@ -11,7 +11,7 @@ type Props = {
 
 const Tag = ({ text, onClose }: Props) => {
   return (
-    <Badge size="small" className={`rounded-md ${onClose && 'gap-0 items-center'}`}>
+    <Badge size="small" className={`rounded-md p-2 ${onClose && 'gap-0 items-center'}`}>
       #{text}
       {onClose ? (
         <Icon
