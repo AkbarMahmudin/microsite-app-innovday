@@ -3,16 +3,17 @@ import { usePathname, useRouter } from "next/navigation";
 
 // components
 import { Breadcrumbs } from "@/components/custom/breadcrumbs";
+import { Paginate } from "@/components/custom/pagination";
 import { Description, EventList } from "../sections";
+import { Toolbar } from "../sections";
 
 // copywrite
 import * as copywrite from "@/_mock/copywriting";
 
 // utils
 import kebabToCamel from "@/lib/kebab-to-camel";
-import { Toolbar } from "../sections";
 import useQueryParams from "@/hooks/useQueryParams";
-import { Paginate } from "@/components/custom/pagination";
+import EVENTS from "@/_mock/_events";
 
 const EventView = ({ category }: { category: string }) => {
   const router = useRouter();
@@ -38,9 +39,9 @@ const EventView = ({ category }: { category: string }) => {
     return null;
   }
 
-  const { title, description, breadcrumbs, content } = cp;
+  const { title, description, breadcrumbs } = cp;
 
-  const events = content[category];
+  const events = EVENTS;
 
   const handleOnSearch = (value: string) => {
     value ? query.set("search", encodeURI(value)) : query.delete("search");

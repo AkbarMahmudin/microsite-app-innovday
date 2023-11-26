@@ -3,6 +3,7 @@ const EVENTS = [
     id: 1,
     thumbnailUrl: "/valid thumbnail.png",
     title: "Innovation Day #1",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content: `
 				<p data-pm-slice="1 1 []">Hi, Sobat Innov!</p>
         <br>
@@ -30,6 +31,7 @@ const EVENTS = [
     id: 2,
     thumbnailUrl: "/valid thumbnail.png",
     title: "Innovation Day #2",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
     tags: ["innovation", "day"],
@@ -46,6 +48,7 @@ const EVENTS = [
     id: 3,
     thumbnailUrl: "/valid thumbnail.png",
     title: "Innovation Day #3",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
     tags: ["innovation", "day"],
@@ -62,6 +65,7 @@ const EVENTS = [
     id: 4,
     thumbnailUrl: "/valid thumbnail.png",
     title: "Innovation Day #4",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae nisi eget nunc ultricies aliquam. Sed vitae nisi eget nunc ultricies aliquam.",
     tags: ["innovation", "day"],

@@ -11,11 +11,13 @@ import { buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/custom/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import Maskot from "@/components/maskot";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { YoutubeEmbed } from "@/components/custom/embed";
 
 const cp = home.content.hero;
 
 const PopUp = () => (
-  <Card className="w-fit absolute md:-left-16 -left-1 md:-top-8 top-6">
+  <Card className="w-fit z-10 absolute md:-left-16 -left-1 md:-top-8 top-6">
     <CardContent className="md:py-6 py-3 md:px-3 px-3 w-full text-center">
       <p className="md:text-[40px] text-xl font-bold md:leading-[48px] leading-normal">
         80K
@@ -28,13 +30,13 @@ const PopUp = () => (
 );
 
 const EmbedVideo = () => (
-  <Image
-    src="/background/hero-image.png"
-    alt=""
-    className="w-full mx-auto"
-    width={300}
-    height={300}
-  />
+  <AspectRatio ratio={16 / 9} className="-z-0 rounded-md">
+    <YoutubeEmbed
+      src="mnGM5HsBZ-8"
+      className="w-full h-full rounded-md"
+      title="About Innovation Day"
+    />
+  </AspectRatio>
 );
 
 const Hero = () => {

@@ -1,5 +1,4 @@
 import { Badge } from "@/components/custom/badge";
-import Toolbar from "./event-toolbar";
 
 type Props = {
   title: string;

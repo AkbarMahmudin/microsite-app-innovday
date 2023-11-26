@@ -1,7 +1,4 @@
 import { Breadcrumbs } from "@/components/custom/breadcrumbs";
-import { YoutubeEmbed } from "@/components/custom/embed";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import React from "react";
 import { Content, DetailInformation, Header } from "../sections";
 
 type Props = {
@@ -10,6 +7,7 @@ type Props = {
 
 const DetailEventView = ({ event }: Props) => {
   const {
+    id,
     title,
     content,
     publishedAt,
@@ -34,8 +32,8 @@ const DetailEventView = ({ event }: Props) => {
             name: "...",
           },
           {
-            name: "Event Name",
-            url: "/events/event-name",
+            name: title,
+            url: `/events/${id}`,
           },
         ]}
         className="px-2 pt-4 md:container"

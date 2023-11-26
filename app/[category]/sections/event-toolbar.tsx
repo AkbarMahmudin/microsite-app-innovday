@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,7 +14,6 @@ import {
 } from "@/components/ui/select";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { FilterForm } from "./components";
-import useQueryParams from "@/hooks/useQueryParams";
 import { SelectGroup } from "@radix-ui/react-select";
 
 type Props = {
@@ -36,7 +34,7 @@ const Toolbar = ({ onSearch, onSort, onFilter }: Props) => {
     <div className="container min-w-full h-full grid grid-rows-2 gap-5 md:gap-0 md:flex md:justify-between">
       <Input
         placeholder="Search"
-        className="w-1/2 h-full"
+        className="md:w-1/2 h-full"
         icon={<Icon icon="basil:search-outline" className="w-6 h-6" />}
         onKeyUp={handleSearch}
       />
