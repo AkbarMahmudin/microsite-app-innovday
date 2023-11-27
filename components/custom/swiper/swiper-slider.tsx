@@ -24,11 +24,12 @@ import Image from "next/image";
 import { EventPreview } from "@/types";
 
 type Props = {
-  data: EventPreview[];
+  data: React.ReactNode[];
   navigation?: boolean;
   navigationPosition?: "left" | "right";
   fromLast?: boolean;
   action?: (id: number | string) => void;
+  slideItemStyle?: React.CSSProperties;
 };
 
 const SwiperSlider = ({
@@ -36,6 +37,7 @@ const SwiperSlider = ({
   navigation = true,
   navigationPosition = "right",
   fromLast = false,
+  slideItemStyle,
   action,
 }: Props) => {
   const [activeIndex, setActiveIndex] = React.useState(0);
@@ -54,7 +56,7 @@ const SwiperSlider = ({
       slidesPerView={"auto"}
       spaceBetween={widthScreen}
       initialSlide={fromLast ? data.length - 1 : 0}
-      className="mySwiper h-full w-full flex flex-col"
+      className="h-full w-full flex flex-col"
       onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
     >
       {navigation && (
@@ -65,28 +67,8 @@ const SwiperSlider = ({
         />
       )}
       {data.map((item, index) => (
-        <SwiperSlide key={index}>
-          <TooltipProvider>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <div
-                  className="rounded-lg overflow-hidden"
-                  onClick={() => handleClick(item.id)}
-                >
-                  <Image
-                    src={item.imageUrl}
-                    alt={item.title}
-                    width={300}
-                    height={300}
-                    className={`h-full w-full ${action && "cursor-pointer"}`}
-                  />
-                </div>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{item.title}</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+        <SwiperSlide key={index} style={slideItemStyle}>
+          {item}
         </SwiperSlide>
       ))}
     </Swiper>

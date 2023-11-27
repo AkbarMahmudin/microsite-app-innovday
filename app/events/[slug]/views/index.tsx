@@ -1,5 +1,9 @@
 import { Breadcrumbs } from "@/components/custom/breadcrumbs";
-import { Content, DetailInformation, Header } from "../sections";
+import { Content, DetailInformation, Header, RelatedEvents } from "../sections";
+
+// copywrite
+import { relatedEvents } from "@/_mock/copywriting";
+import EVENTS from "@/_mock/_events";
 
 type Props = {
   event: any;
@@ -20,6 +24,8 @@ const DetailEventView = ({ event }: Props) => {
     tags,
   } = event;
 
+  const events = EVENTS.filter((event) => event.id !== id);
+
   return (
     <>
       <Breadcrumbs
@@ -36,7 +42,7 @@ const DetailEventView = ({ event }: Props) => {
             url: `/events/${id}`,
           },
         ]}
-        className="px-2 pt-4 md:container"
+        className="px-2 pt-4 md:pb-0 md:container"
       />
       <Header youtubeSrc={youtubeSrc} slidoSrc={slidoSrc} />
 
@@ -57,6 +63,8 @@ const DetailEventView = ({ event }: Props) => {
           tags={tags}
         />
       </div>
+      
+      <RelatedEvents events={events} {...relatedEvents} />
     </>
   );
 };

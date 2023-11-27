@@ -23,7 +23,7 @@ const EVENTS = [
     moderator: "Jane Doe",
     startDate: "2021-01-01T09:00:00.000Z",
     endDate: "2021-01-01T12:00:00.000Z",
-    slidoId: "et1humAMJM1kAY6y6jxaQz",
+    // slidoId: "et1humAMJM1kAY6y6jxaQz",
     youtubeId: "https://www.youtube.com/embed/DeKtiUu0jZM",
     date: "2021-01-01",
   },

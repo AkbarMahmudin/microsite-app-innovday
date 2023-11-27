@@ -15,6 +15,23 @@ import { SwiperSlider } from "@/components/custom/swiper";
 
 const cp = home.content["our-events"];
 
+const renderPreview = (data: any) => {
+  return data.map((item: any, index: number) => (
+    <div
+      className="rounded-lg overflow-hidden"
+      key={index}
+    >
+      <Image
+        src={item.imageUrl}
+        alt={item.title}
+        width={300}
+        height={300}
+        className="h-full w-full cursor-pointer"
+      />
+    </div>
+  ));
+};
+
 const EventDescription = () => (
   <div className="flex flex-col justify-center items-start gap-4">
     <Badge size="small">{cp.tag}</Badge>
@@ -64,7 +81,7 @@ const Event = ({
       </div>
       <div className="lg:w-3/5">
         <SwiperSlider
-          data={cp[type].preview}
+          data={renderPreview(cp[type].preview)}
           navigationPosition={direction}
           fromLast={fromLast}
         />

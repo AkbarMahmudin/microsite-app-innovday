@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { fExcerpt } from "@/lib/format-string";
 import { fDate } from "@/lib/format-time";
+import { cn } from "@/lib/utils";
 
 const CardImage = ({ imageUrl }: { imageUrl: string }) => (
   <div className="relative overflow-hidden">
@@ -32,6 +33,7 @@ type Props = {
   date: Date | string;
   url: string;
   excerptLength?: number;
+  className?: string;
 };
 
 const CardItem = ({
@@ -41,9 +43,11 @@ const CardItem = ({
   url,
   thumbnailUrl,
   excerptLength,
+  className,
+
 }: Props) => {
   return (
-    <Card className="overflow-hidden">
+    <Card className={cn("overflow-hidden", className)}>
       <CardImage imageUrl={thumbnailUrl} />
       <CardHeader className="pb-3 px-4">
         <time

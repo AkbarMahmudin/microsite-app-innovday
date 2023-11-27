@@ -29,7 +29,7 @@ const EventView = ({ category }: { category: string }) => {
       name: string;
       url?: string;
     }[];
-    content: {
+    content?: {
       [key: string]: any;
     };
   } = copywrite[categoryFormated as keyof typeof copywrite];
