@@ -40,7 +40,7 @@ const BeOurSpeaker = () => {
               <Maskot variant="microphone" className="z-10 lg:w-[480px]" />
             </div>
           </div>
-          <List variant="striped" data={cp.benefits} />
+          <List variant="striped" showNumber data={cp.benefits} />
         </div>
       </div>
     </section>
