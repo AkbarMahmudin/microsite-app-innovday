@@ -33,9 +33,10 @@ import { Tag } from "@/components/custom/badge";
 type Props = {
   children: React.ReactNode;
   onFilter: (tags: string[], category: string) => void;
+  onReset: () => void;
 };
 
-const FilterForm = ({ children, onFilter }: Props) => {
+const FilterForm = ({ children, onFilter, onReset }: Props) => {
   const [tags, setTags] = React.useState<string[]>([]);
   const [category, setCategory] = React.useState<string>("");
 
@@ -78,6 +79,7 @@ const FilterForm = ({ children, onFilter }: Props) => {
   const handleResetFilter = () => {
     handleRemoveTags();
     handleChangeCategory("");
+    onReset();
   };
 
   const handleFilter = () => {

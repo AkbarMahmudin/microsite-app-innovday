@@ -20,9 +20,10 @@ type Props = {
   onSearch: (value: string) => void;
   onSort: (value: string) => void;
   onFilter: (tags: string[], category: string) => void;
+  onResetFilter: () => void;
 };
 
-const Toolbar = ({ onSearch, onSort, onFilter }: Props) => {
+const Toolbar = ({ onSearch, onSort, onFilter, onResetFilter }: Props) => {
 
   const handleSearch = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
@@ -55,7 +56,7 @@ const Toolbar = ({ onSearch, onSort, onFilter }: Props) => {
         </Select>
 
         {/* Filter */}
-        <FilterForm onFilter={onFilter}>
+        <FilterForm onFilter={onFilter} onReset={onResetFilter}>
           <Button
             variant="outline"
             className="w-full flex justify-between border border-input rounded-md text-black"

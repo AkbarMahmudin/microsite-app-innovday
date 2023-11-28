@@ -71,6 +71,13 @@ const EventView = ({ category }: { category: string }) => {
     router.replace(`${pathname}?${query.toString()}`);
   };
 
+  const handleResetFilter = () => {
+    query.delete("tags");
+    query.delete("category");
+
+    router.replace(`${pathname}?${query.toString()}`);
+  };
+
   return (
     <>
       <Breadcrumbs className="container" links={breadcrumbs || []} />
@@ -79,6 +86,7 @@ const EventView = ({ category }: { category: string }) => {
         onSearch={handleOnSearch}
         onSort={handleOnSort}
         onFilter={handleOnFilter}
+        onResetFilter={handleResetFilter}
       />
       <EventList events={events} />
       <Paginate
