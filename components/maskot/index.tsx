@@ -9,7 +9,8 @@ type Props = {
     | "intercom"
     | "laptop"
     | "microphone"
-    | "smartphone";
+    | "smartphone"
+    | "not-found";
   className?: string;
 };
 
@@ -22,6 +23,7 @@ const Maskot = ({ variant, className }: Props) => {
     laptop: "/maskot/laptop.png",
     microphone: "/maskot/microphone.png",
     smartphone: "/maskot/smartphone.png",
+    "not-found": "/maskot/not-found.png",
   };
 
   return (

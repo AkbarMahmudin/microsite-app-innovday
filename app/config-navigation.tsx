@@ -15,14 +15,17 @@ export const useNavData = () => {
         {
           title: "All Events",
           path: paths.events.root,
+          description: "Lihat semua event yang akan datang",
         },
         {
           title: "Innovation Day",
           path: paths.innovationDay,
+          description: "Event knowledge sharing dengan para ahli",
         },
         {
           title: "InTalks",
           path: paths.inTalks,
+          description: "Podcast yang membahas beragam topik menarik",
         },
       ],
     },

@@ -51,24 +51,108 @@ const ListItem = React.forwardRef<
         active={isActive}
         asChild
       >
-        <a
+        <Link
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
+          href={props.href as string}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
 });
 ListItem.displayName = "ListItem";
+
+const ChildrenItem = ({ title, item }: any) => {
+  const pathname = usePathname();
+  const isActive = item
+    .map(({ path }: { path: string }) => path)
+    .includes(pathname)
+    ? "text-primary"
+    : "";
+
+  return (
+    <>
+      <Accordion
+        type="single"
+        collapsible
+        className="px-4 text-sm font-medium block lg:hidden"
+      >
+        <AccordionItem value={title}>
+          <AccordionTrigger className={`w-full ${isActive}`}>
+            {title}
+          </AccordionTrigger>
+          <AccordionContent>
+            {item.map((childItem: any) => (
+              <ListItem
+                key={childItem.title}
+                title={childItem.title}
+                href={childItem.path}
+                className="p-4"
+              ></ListItem>
+            ))}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+
+      <div className="hidden lg:block">
+        <NavigationMenuTrigger className={isActive}>
+          {title}
+        </NavigationMenuTrigger>
+        <NavigationMenuContent>
+          <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+            {item.map((childItem: any, index: number) => {
+              return index < 1 ? (
+                <li key={index} className="row-span-3">
+                  <NavigationMenuLink asChild>
+                    <Link
+                      className={cn(
+                        "flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-br from-popover to-accent p-6 no-underline outline-none focus:shadow-md transition-all",
+                        pathname === childItem.path && "border-primary border-2"
+                      )}
+                      href={childItem.path}
+                    >
+                      <Icon
+                        icon="material-symbols-light:event-note"
+                        width={26}
+                        className={"text-primary"}
+                      />
+                      <div
+                        className={`mb-2 mt-4 text-lg font-medium bg-clip-text text-transparent bg-gradient-to-r from-primary to-yellow-300`}
+                      >
+                        {childItem.title}
+                      </div>
+                      <p className="text-sm leading-tight text-muted-foreground">
+                        {childItem.description}
+                      </p>
+                    </Link>
+                  </NavigationMenuLink>
+                </li>
+              ) : (
+                <ListItem
+                  key={childItem.title}
+                  title={childItem.title}
+                  href={childItem.path}
+                  className="p-4"
+                >
+                  {childItem.description}
+                </ListItem>
+              );
+            })}
+          </ul>
+        </NavigationMenuContent>
+      </div>
+    </>
+  );
+};
 
 const MenuItems = ({ items }: any) => {
   const pathname = usePathname();
@@ -76,52 +160,14 @@ const MenuItems = ({ items }: any) => {
   return items.map((item: any) => (
     <NavigationMenuItem key={item.title} className="w-full">
       {item.children ? (
-        <>
-          <Accordion
-            type="single"
-            collapsible
-            className="px-4 text-sm font-medium block lg:hidden"
-          >
-            <AccordionItem value={item.title}>
-              <AccordionTrigger className="w-full">
-                {item.title}
-              </AccordionTrigger>
-              <AccordionContent>
-                {item.children.map((childItem: any) => (
-                  <ListItem
-                    key={childItem.title}
-                    title={childItem.title}
-                    href={childItem.path}
-                    className="p-4"
-                  ></ListItem>
-                ))}
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-
-          <div className="hidden lg:block">
-            <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="w-[160px] py-2">
-                {item.children.map((childItem: any) => (
-                  <ListItem
-                    key={childItem.title}
-                    title={childItem.title}
-                    href={childItem.path}
-                    className="p-4"
-                  ></ListItem>
-                ))}
-              </ul>
-            </NavigationMenuContent>
-          </div>
-        </>
+        <ChildrenItem title={item.title} item={item.children} />
       ) : (
-        <Link
-          href={item.path}
-          legacyBehavior
-          passHref
-        >
-          <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${pathname === item.path ? "text-primary" : ""}`}>
+        <Link href={item.path} legacyBehavior passHref>
+          <NavigationMenuLink
+            className={`${navigationMenuTriggerStyle()} ${
+              pathname === item.path ? "text-primary" : ""
+            }`}
+          >
             {item.title}
           </NavigationMenuLink>
         </Link>
