@@ -18,8 +18,7 @@ const ContactView = () => {
         ]}
         className='px-2 pt-4 md:pb-0 md:container'
       />
-      {/* <div className='min-w-full md:container md:flex md:items-center'> */}
-      <div className='md:mx-28 relative justify-end'>
+      <div className='lg:mx-28 relative justify-end'>
         <ContactInfo />
         <ContactForm />
       </div>

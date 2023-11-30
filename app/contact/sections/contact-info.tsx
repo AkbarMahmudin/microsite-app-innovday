@@ -10,13 +10,13 @@ import { Button } from "@/components/custom/button";
 
 const renderContactList = () => {
   return (
-    <ul className="self-stretch flex-col justify-start items-center gap-4 flex text-xs md:text-lg font-normal">
+    <ul className="self-stretch flex-col justify-start items-center gap-4 flex text-xs md:text-base xl:text-lg font-normal">
       {CONTACTS.map((item, index) => (
         <li
           key={index}
           className="self-stretch justify-start items-center gap-3 inline-flex"
         >
-          <Icon icon={item.icon} className="md:w-6" />
+          <Icon icon={item.icon} className="lg:w-6" />
           <Link href={item.link || "#"}>{item.text}</Link>
         </li>
       ))}
@@ -50,10 +50,9 @@ const renderSocialMediaList = () => {
 
 const ContactInfo = () => {
   return (
-    // <aside className="container md:px-0 md:w-1/2">
-    <aside className="container md:px-0 md:w-1/2">
-      <Card className="pt-6 pb-20 px-8 md:py-[71px] md:pl-[90px] md:pr-[130px] bg-primary flex flex-col items-center gap-8 text-white rounded-3xl">
-        <Maskot variant="smartphone" className="w-64 md:w-[420px]" />
+    <aside className="container lg:px-0 lg:w-1/2">
+      <Card className="pt-6 pb-20 px-8 lg:py-[71px] lg:pl-[50px] lg:pr-[100px] bg-primary flex flex-col items-center gap-8 text-white rounded-3xl">
+        <Maskot variant="smartphone" className="w-64 lg:w-[420px]" />
         {renderContactList()}
         {renderSocialMediaList()}
       </Card>

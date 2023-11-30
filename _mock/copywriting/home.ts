@@ -24,7 +24,7 @@ export const home = {
       description:
         "Sobat Innov dapat menyaksikan berbagai event Innovation Day secara gratis melalui microsite ini dan akun media sosial kami.",
       "innovation-day": {
-        logo: "/logo/innovday_full.png",
+        logo: "/logo/innovday.png",
         title: "Innovation Day",
         description:
           "Event knowledge sharing yang diadakan setiap Hari Kamis dengan menghadirkan para ahli di bidangnya.",

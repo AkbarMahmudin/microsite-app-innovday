@@ -14,8 +14,8 @@ import React from "react";
 
 const ContactForm = () => {
   return (
-    <section className="container md:px-0 md:w-3/5 md:h-full relative md:absolute md:flex items-center -top-28 md:-top-0 md:right-0 mb-0">
-      <Card className="mx-6 md:mx-0 md:w-full rounded-3xl md:py-10 shadow-lg">
+    <section className="container lg:px-0 lg:w-3/5 md:h-full relative lg:absolute lg:flex items-center -top-24 lg:-top-0 lg:right-0 mb-0">
+      <Card className="mx-6 lg:mx-0 lg:w-full rounded-3xl lg:py-10 shadow-lg">
         <CardHeader>
           <CardTitle className="text-2xl font-bold">
             Contact {" "}
