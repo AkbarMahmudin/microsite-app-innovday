@@ -29,16 +29,28 @@ import {
 } from "@/components/ui/tooltip";
 import { Button } from "@/components/ui/button";
 import { Tag } from "@/components/custom/badge";
+import { CATEGORIES } from "@/_mock";
 
 type Props = {
   children: React.ReactNode;
   onFilter: (tags: string[], category: string) => void;
   onReset: () => void;
+  currentCategory?: string;
+  currentTags?: string[];
+  showCategory?: boolean;
 };
 
-const FilterForm = ({ children, onFilter, onReset }: Props) => {
-  const [tags, setTags] = React.useState<string[]>([]);
-  const [category, setCategory] = React.useState<string>("");
+const FilterForm = ({
+  children,
+  onFilter,
+  onReset,
+  currentCategory = "",
+  currentTags = [],
+  showCategory = true,
+}: Props) => {
+  const [open, setOpen] = React.useState<boolean>(false);
+  const [tags, setTags] = React.useState<string[]>(currentTags);
+  const [category, setCategory] = React.useState<string>(currentCategory);
 
   const [isDisabled, setIsDisabled] = React.useState<boolean>(true);
 
@@ -69,26 +81,36 @@ const FilterForm = ({ children, onFilter, onReset }: Props) => {
   };
 
   const handleRemoveTag = (tag: string) => {
+    if (tags.length === 1) onReset();
+    
     setTags((prev) => prev.filter((t) => t !== tag));
   };
 
   const handleRemoveTags = () => {
     setTags([]);
+    onReset();
   };
 
   const handleResetFilter = () => {
     handleRemoveTags();
     handleChangeCategory("");
     onReset();
+    setOpen(false);
   };
 
   const handleFilter = () => {
     onFilter(tags, category);
+    setOpen(false);
   };
 
   return (
     <>
-      <Sheet>
+      <Sheet
+        open={open}
+        onOpenChange={(value) => {
+          setOpen(value);
+        }}
+      >
         <SheetTrigger asChild>{children}</SheetTrigger>
 
         <SheetContent
@@ -103,20 +125,24 @@ const FilterForm = ({ children, onFilter, onReset }: Props) => {
           </SheetHeader>
 
           <div className="px-1 py-3 flex flex-col gap-5">
-            <div className="grid grid-cols-1 w-full items-center gap-3">
-              <Label htmlFor="category">Category</Label>
-              <Select value={category} onValueChange={handleChangeCategory}>
-                <SelectTrigger id="category" className="w-full" value="">
-                  <SelectValue placeholder="Select category" />
-                </SelectTrigger>
-                <SelectContent className="w-full">
-                  <SelectItem value="all">All</SelectItem>
-                  <SelectItem value="innovation-day">Innovation Day</SelectItem>
-                  <SelectItem value="intalks">InTalks</SelectItem>
-                  <SelectItem value="workshop">Workshop</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
+            {showCategory && (
+              <div className="grid grid-cols-1 w-full items-center gap-3">
+                <Label htmlFor="category">Category</Label>
+                <Select value={category} onValueChange={handleChangeCategory}>
+                  <SelectTrigger id="category" className="w-full" value="">
+                    <SelectValue placeholder="Select category" />
+                  </SelectTrigger>
+                  <SelectContent className="w-full">
+                    <SelectItem value="all">All</SelectItem>
+                    {CATEGORIES.map((category, index) => (
+                      <SelectItem key={index} value={category}>
+                        {category}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
             <div className="grid grid-cols-1 w-full items-center gap-3">
               <Label htmlFor="hastag">Hastag</Label>
               <Input
@@ -160,7 +186,11 @@ const FilterForm = ({ children, onFilter, onReset }: Props) => {
               </div>
             </div>
             <div className="flex flex-col w-full items-center gap-2 pt-6">
-              <Button className="w-full" disabled={isDisabled} onClick={handleFilter}>
+              <Button
+                className="w-full"
+                disabled={isDisabled}
+                onClick={handleFilter}
+              >
                 Terapkan
               </Button>
               <Button

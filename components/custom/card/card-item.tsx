@@ -9,7 +9,7 @@ import { fExcerpt } from "@/lib/format-string";
 import { fDate } from "@/lib/format-time";
 import { cn } from "@/lib/utils";
 
-const CardImage = ({ imageUrl }: { imageUrl: string }) => (
+const CardImage = ({ imageUrl, category }: { imageUrl: string, category?: string }) => (
   <div className="relative overflow-hidden">
     <Image
       src={imageUrl || "https://picsum.photos/300/300"}
@@ -18,11 +18,14 @@ const CardImage = ({ imageUrl }: { imageUrl: string }) => (
       height={300}
       className="object-cover w-full"
     />
-    <div className="h-7 px-3 bg-cyan-100 rounded-[20px] border border-primary backdrop-blur-[5px] justify-start items-start gap-2.5 inline-flex absolute top-3 right-3">
-      <div className="text-primary lg:text-sm text-xs font-semibold uppercase lg:leading-7 leading-6 lg:tracking-wide tracking-tight">
-        Innovation Day
+
+    {category && (
+      <div className="h-7 px-3 bg-cyan-100 rounded-[20px] border border-primary backdrop-blur-[5px] justify-start items-start gap-2.5 inline-flex absolute top-3 right-3">
+        <div className="text-primary lg:text-sm text-xs font-semibold uppercase lg:leading-7 leading-6 lg:tracking-wide tracking-tight">
+          {category}
+        </div>
       </div>
-    </div>
+    )}
   </div>
 );
 
@@ -32,6 +35,7 @@ type Props = {
   description: string;
   date: Date | string;
   url: string;
+  category?: string;
   excerptLength?: number;
   className?: string;
 };
@@ -44,11 +48,11 @@ const CardItem = ({
   thumbnailUrl,
   excerptLength,
   className,
-
+  category,
 }: Props) => {
   return (
     <Card className={cn("overflow-hidden", className)}>
-      <CardImage imageUrl={thumbnailUrl} />
+      <CardImage imageUrl={thumbnailUrl} category={category} />
       <CardHeader className="pb-3 px-4">
         <time
           dateTime={date.toString()}

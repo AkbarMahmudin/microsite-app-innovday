@@ -1,12 +1,17 @@
 // components
 import { CardItem } from "@/components/custom/card";
+import { NoDataFound } from "./components";
 
 const EventList = ({ events = [] }: { events: any }) => {
+  if (events.length < 1) return (
+    <NoDataFound />
+  );
+  
   return (
     <>
       <section className="container min-w-full grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 justify-start">
         {events.map((event: any, index: number) => (
-          <CardItem key={index} url={'events/' + event.id.toString()} {...event} />
+          <CardItem key={index} url={'events/' + event.id.toString()}  {...event} date={event.publishedAt} />
         ))}
       </section>
     </>
