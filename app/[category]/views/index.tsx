@@ -52,8 +52,6 @@ const EventView = ({ category: categoryEvent }: { category: string }) => {
     tags
   );
 
-  console.log("displayData", displayData);
-
   const handleOnSearch = (value: string) => {
     value ? query.set("search", encodeURI(value)) : query.delete("search");
 
