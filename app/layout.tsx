@@ -5,12 +5,13 @@ import "./globals.css";
 // mock data
 import { CONTACTS, SOCIAL_MEDIA } from "@/_mock";
 
-import { useNavData } from "./config-navigation";
-
 // components
 import { Navbar } from "@/components/custom/nav";
 import { Footer } from "@/components/custom/footer";
 import { Toaster } from "@/components/ui/toaster";
+
+// hooks
+import { useNavData } from "@/hooks/useNavData";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -48,7 +49,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className} suppressHydrationWarning={true}>
-        <Navbar data={useNavData()} />
+        <Navbar />
 
         <main
           className={`flex flex-col gap-3 pb-24`}

@@ -3,9 +3,18 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
+// icon
 import { Icon } from "@iconify/react";
+
+// utils
 import { cn } from "@/lib/utils";
+import { getKeyControl } from "@/lib/user-agent";
+
+// components
+import HumbergerMenu from "./humberger-menu";
+import { Announcement, AnnouncementProps } from "../announcement";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -25,10 +34,8 @@ import {
 import { CommandDialog } from "@/components/custom/command";
 import { Button } from "@/components/ui/button";
 
-import HumbergerMenu from "./humberger-menu";
-import { getKeyControl } from "@/lib/user-agent";
-import { Announcement, AnnouncementProps } from "../announcement";
-import { usePathname } from "next/navigation";
+// hooks
+import useCommand from "@/hooks/useCommand";
 
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
@@ -170,19 +177,18 @@ const MenuItems = ({ items }: any) => {
 };
 
 type Props = {
-  data: any;
   announcement?: AnnouncementProps;
 };
 
-export default function Navbar({ data, announcement }: Props) {
-  const [open, setOpen] = React.useState(false);
+export default function Navbar({ announcement }: Props) {
+  const { eventData, navData, open, setOpen, handleOpenChange, handleSearch } =
+    useCommand();
+
   const [keyControl, setKeyControl] = React.useState("");
 
   React.useEffect(() => {
     setKeyControl(getKeyControl());
   }, [keyControl]);
-
-  // const menuItems = renderMenutItems(data);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
@@ -194,7 +200,7 @@ export default function Navbar({ data, announcement }: Props) {
 
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
-  }, []);
+  }, [setOpen]);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-3xl">
@@ -209,13 +215,13 @@ export default function Navbar({ data, announcement }: Props) {
 
         <NavigationMenu className="hidden lg:block">
           <NavigationMenuList>
-            <MenuItems items={data} />
+            <MenuItems items={navData} />
           </NavigationMenuList>
           <NavigationMenuViewport />
         </NavigationMenu>
 
         <HumbergerMenu
-          menu={<MenuItems items={data} />}
+          menu={<MenuItems items={navData} />}
           side="right"
           onOpen={setOpen}
         />
@@ -240,7 +246,13 @@ export default function Navbar({ data, announcement }: Props) {
           )}
         </Button>
 
-        <CommandDialog open={open} onOpenChange={setOpen} />
+        <CommandDialog
+          open={open}
+          navData={navData}
+          eventData={eventData}
+          onOpenChange={handleOpenChange}
+          onSearch={handleSearch}
+        />
       </nav>
     </header>
   );

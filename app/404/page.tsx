@@ -1,22 +1,35 @@
 "use client";
 
+import React from "react";
+import Link from "next/link";
+
+// icon
+import { Icon } from "@iconify/react/dist/iconify.js";
+
+// hooks
+import useCommand from "@/hooks/useCommand";
+
+// components
+import Maskot from "@/components/maskot";
 import { Badge } from "@/components/custom/badge";
 import { CommandDialog } from "@/components/custom/command";
-import Maskot from "@/components/maskot";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import Link from "next/link";
-import React from "react";
 
 const NotFound = () => {
-  const [open, setOpen] = React.useState(false);
+  const { eventData, navData, open, setOpen, handleOpenChange, handleSearch } =
+    useCommand();
 
   return (
     <section className="container min-w-full min-h-[calc(100vh-10rem)] grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-[50px] gap-y-10 justify-center items-center text-muted-foreground bg-[url('/background/404.png')] bg-contain bg-no-repeat bg-center">
-      <Maskot variant="smartphone" className="mx-auto p-4 md:w-full w-3/4 lg:row-span-2" />
+      <Maskot
+        variant="smartphone"
+        className="mx-auto p-4 md:w-full w-3/4 lg:row-span-2"
+      />
 
       <article className="404__message flex flex-col gap-3 items-center self-end min-w-full">
-        <Badge className="font-bold text-2xl md:text-3xl lg:text-6xl">404</Badge>
+        <Badge className="font-bold text-2xl md:text-3xl lg:text-6xl">
+          404
+        </Badge>
         <strong className="text-lg md:text-xl lg:text-3xl font-bold leading-tight text-center mt-4">
           Oops, kami tidak dapat menemukan apa yang kamu cari
         </strong>
@@ -27,7 +40,11 @@ const NotFound = () => {
           Apa yang ingin Sobat Innov temukan?
         </p>
 
-        <Button variant="outline" className="w-full h-full bg-transparent border-input inline-flex justify-start" onClick={() => setOpen(true)}>
+        <Button
+          variant="outline"
+          className="w-full h-full bg-transparent border-input inline-flex justify-start"
+          onClick={() => setOpen(true)}
+        >
           <Icon
             icon="basil:search-outline"
             width="22"
@@ -51,7 +68,13 @@ const NotFound = () => {
         </Link>
       </article>
 
-      <CommandDialog open={open} onOpenChange={setOpen} />
+      <CommandDialog
+        open={open}
+        onOpenChange={handleOpenChange}
+        eventData={eventData}
+        navData={navData}
+        onSearch={handleSearch}
+      />
     </section>
   );
 };
