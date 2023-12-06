@@ -6,6 +6,7 @@ export const paths = {
   },
   innovationDay: '/innovation-day',
   inTalks: '/in-talks',
+  internalEvent: '/internal',
   speaker: '/speaker',
   faq: '/faq',
   contact: '/contact',

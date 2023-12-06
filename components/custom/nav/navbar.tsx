@@ -115,7 +115,7 @@ const ChildrenItem = ({ title, item }: any) => {
                   <NavigationMenuLink asChild>
                     <Link
                       className={cn(
-                        "flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-br from-popover to-accent p-6 no-underline outline-none focus:shadow-md transition-all",
+                        "flex h-full w-full select-none flex-col justify-center rounded-md bg-gradient-to-br from-popover to-accent p-6 no-underline outline-none focus:shadow-md transition-all",
                         pathname === childItem.path && "border-primary border-2"
                       )}
                       href={childItem.path}

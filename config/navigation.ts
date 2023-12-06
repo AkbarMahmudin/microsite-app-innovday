@@ -24,6 +24,11 @@ export const navigation = [
         path: paths.inTalks,
         description: "Podcast yang membahas beragam topik menarik",
       },
+      {
+        title: "Internal Event",
+        path: paths.internalEvent,
+        description: "Event eksklusif bagi Sobat Innov yang memiliki akses ",
+      },
     ],
   },
   {
