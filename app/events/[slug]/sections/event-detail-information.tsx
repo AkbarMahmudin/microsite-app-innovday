@@ -3,6 +3,7 @@
 import { Tag } from "@/components/custom/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { paths } from "@/routes/paths";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
@@ -21,7 +22,7 @@ const ListItem = ({ icon, title, value }: any) => (
 const TagItems = ({ tags }: any) => (
   <div className="flex gap-2 flex-wrap">
     {tags.map((tag: string, index: number) => (
-      <Link key={index} href="#">
+      <Link key={index} href={`${paths.events.root}?tags=${tag}`}>
         <Tag text={tag} />
       </Link>
     ))}

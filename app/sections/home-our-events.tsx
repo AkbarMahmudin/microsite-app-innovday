@@ -26,7 +26,9 @@ const renderPreview = (data: any) => {
         alt={item.title}
         width={300}
         height={300}
-        className="h-full w-full cursor-pointer"
+        className="h-full w-full cursor-grab"
+        fetchPriority="high"
+        priority
       />
     </div>
   ));
@@ -53,7 +55,7 @@ const Event = ({
 }) => {
   return (
     <div
-      className={`flex lg:flex-row flex-col lg:justify-between justify-start items-center lg:gap-10 gap-4 ${
+      className={`h-full flex lg:flex-row flex-col lg:justify-between justify-start items-center lg:gap-10 gap-4 ${
         direction === "right" ? "lg:flex-row" : "lg:flex-row-reverse"
       }`}
     >
@@ -64,6 +66,8 @@ const Event = ({
           width={300}
           height={300}
           className={type === "innovation-day" ? "lg:w-[200px] w-3/4" : "w-2/5"}
+          priority
+          fetchPriority="high"
         />
         <p className="text-sm font-normal">{cp[type].description}</p>
         <Link

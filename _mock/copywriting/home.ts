@@ -30,26 +30,26 @@ export const home = {
           "Event knowledge sharing yang diadakan setiap Hari Kamis dengan menghadirkan para ahli di bidangnya.",
         cta: {
           label: "Explore Innovation Day",
-          url: "/events/innovation-day",
+          url: "/innovation-day",
         },
         preview: [
           {
             id: "1",
             title: "Innovation Day #1",
             url: "/events/innovation-day/1",
-            imageUrl: "/valid thumbnail.png",
+            imageUrl: "/event-documentation/3.png",
           },
           {
             id: "2",
             title: "Innovation Day #2",
             url: "/events/innovation-day/2",
-            imageUrl: "/valid thumbnail.png",
+            imageUrl: "/event-documentation/2.png",
           },
           {
             id: "3",
             title: "Innovation Day #3",
             url: "/events/innovation-day/3",
-            imageUrl: "/valid thumbnail.png",
+            imageUrl: "/event-documentation/1.png",
           },
         ],
       },
@@ -60,26 +60,26 @@ export const home = {
           "Podcast yang membahas beragam topik menarik yang disajikan secara simple, fun, dan fresh untuk menambah beragam insight baru.",
         cta: {
           label: "Explore In Talks",
-          url: "/events/in-talks",
+          url: "/in-talks",
         },
         preview: [
           {
             id: "1",
             title: "In Talks #1",
             url: "/events/in-talks/1",
-            imageUrl: "/valid thumbnail.png",
+            imageUrl: "/event-documentation/6.png",
           },
           {
             id: "2",
             title: "In Talks #2",
             url: "/events/in-talks/2",
-            imageUrl: "/valid thumbnail.png",
+            imageUrl: "/event-documentation/5.png",
           },
           {
             id: "3",
             title: "In Talks #3",
             url: "/events/in-talks/3",
-            imageUrl: "/valid thumbnail.png",
+            imageUrl: "/event-documentation/4.png",
           },
         ],
       },

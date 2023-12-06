@@ -43,13 +43,13 @@ export default function RootLayout({
       label: "Tonton Sekarang",
       href: "/",
     },
-    startDate: new Date("2023-11-16 14:40:00"),
+    startDate: new Date("2023-12-13 13:00:00"),
   };
 
   return (
     <html lang="en">
       <body className={poppins.className} suppressHydrationWarning={true}>
-        <Navbar />
+        <Navbar announcement={announcement} />
 
         <main
           className={`flex flex-col gap-3 pb-24`}
