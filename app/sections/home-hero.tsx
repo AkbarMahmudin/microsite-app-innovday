@@ -20,7 +20,7 @@ const PopUp = () => (
   <Card className="w-fit z-10 absolute md:-left-16 -left-1 md:-top-8 top-6">
     <CardContent className="md:py-6 py-3 md:px-3 px-3 w-full text-center">
       <p className="md:text-[40px] text-xl font-bold md:leading-[48px] leading-normal">
-        80K
+        200+
       </p>
       <p className="md:text-base text-[8px] font-normal md:leading-7 leading-3 md:tracking-wide tracking-tight">
         Success Event
