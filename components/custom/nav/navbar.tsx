@@ -226,7 +226,7 @@ export default function Navbar({ announcement }: Props) {
           onOpen={setOpen}
         />
 
-        <Button
+        {/* <Button
           variant="outline"
           className="pl-1.5 pr-2 rounded-[10px] bg-transparent justify-center items-center gap-1 lg:inline-flex hidden border-input"
           onClick={() => setOpen((prev) => !prev)}
@@ -244,7 +244,7 @@ export default function Navbar({ announcement }: Props) {
               <span className="text-xs">{keyControl}</span>K
             </kbd>
           )}
-        </Button>
+        </Button> */}
 
         <CommandDialog
           open={open}

@@ -28,9 +28,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const ourProgram = useNavData()
-    .filter((navItem) => navItem.title === "Our Events")
-    .map((navItem) => navItem.children)[0] as any;
+  const ourProgram = [] as any;
+  // const ourProgram = useNavData()
+  //   .filter((navItem) => navItem.title === "Our Events")
+  //   .map((navItem) => navItem.children)[0] as any;
 
   const navData = {
     menu: useNavData(),
@@ -38,10 +39,10 @@ export default function RootLayout({
   };
 
   const announcement = {
-    text: "Akan segera tayang dalam",
+    text: "Townhall DB Q4 2023",
     cta: {
       label: "Tonton Sekarang",
-      href: "/",
+      href: "/townhall-db-q4-2023",
     },
     startDate: new Date("2023-12-13 13:00:00"),
   };

@@ -23,8 +23,9 @@ const HumbergerMenu = ({ menu, side = "top", onOpen }: Props) => {
         icon="basil:search-outline"
         width="24"
         height="24"
-        color="#909090"
-        onClick={() => onOpen((prev: any) => !prev)}
+        // color="#909090"
+        className="text-background"
+        // onClick={() => onOpen((prev: any) => !prev)}
       />
       <Sheet>
         <SheetTrigger className="block lg:hidden">

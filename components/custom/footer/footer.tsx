@@ -26,9 +26,7 @@ const ContactInfo = ({ contact }: ContactInfoProps) => (
           className="self-stretch justify-start items-start gap-3 inline-flex"
         >
           <Icon icon={item.icon} width={18} height={18} />
-          <Link href={item.link || '#'}>
-            {item.text}
-          </Link>
+          <Link href={item.link || "#"}>{item.text}</Link>
         </li>
       ))}
     </ul>
@@ -53,18 +51,20 @@ const Navigation = ({ menu, ourProgram }: NavigationProps) => (
       </ul>
     </div>
 
-    <div className="flex-col justify-center items-start gap-4 inline-flex">
-      <h3 className="text-white text-base font-bold leading-tight">
-        Our Program
-      </h3>
-      <ul className="flex-col justify-center items-start gap-3 flex">
-        {ourProgram.map((item, index) => (
-          <li key={index} className="text-white text-sm font-normal">
-            <Link href={item.path}>{item.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
+    {ourProgram && (
+      <div className="flex-col justify-center items-start gap-4 inline-flex">
+        <h3 className="text-white text-base font-bold leading-tight">
+          Our Program
+        </h3>
+        <ul className="flex-col justify-center items-start gap-3 flex">
+          {ourProgram.map((item, index) => (
+            <li key={index} className="text-white text-sm font-normal">
+              <Link href={item.path}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
   </div>
 );
 

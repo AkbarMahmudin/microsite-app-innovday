@@ -60,7 +60,7 @@ const Hero = () => {
         </p>
 
         <div className="hero__cta flex flex-row flex-wrap md:justify-start justify-between md:gap-5 gap-0 mt-8 w-full">
-          <Link
+          {/* <Link
             href={cp.cta["our-events"].url}
             className={buttonVariants({
               variant: "default",
@@ -69,19 +69,17 @@ const Hero = () => {
             })}
           >
             {cp.cta["our-events"].label}
-          </Link>
+          </Link> */}
 
           <Link
             href={cp.cta["our-speakers"].url}
             className={buttonVariants({
-              variant: "link",
               size: "lg",
-              className: "hover:text-primary w-full md:w-auto",
             })}
-            style={{ color: "#000" }}
+            // style={{ color: "#000" }}
           >
             {cp.cta["our-speakers"].label}
-            <ArrowRight className="ml-2" size={24} />
+            <ArrowRight size={24} />
           </Link>
         </div>
       </div>

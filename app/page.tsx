@@ -14,11 +14,11 @@ export default function Home() {
     <>
       <Hero />
       <OurEvents />
-      <LatestEvent />
+      {/* <LatestEvent /> */}
       <OurVision />
       <BeOurSpeaker />
-      <OurReviews />
-      <RegistSpeaker />
+      {/* <OurReviews />
+      <RegistSpeaker /> */}
       <OurSocialMedia />
     </>
   );

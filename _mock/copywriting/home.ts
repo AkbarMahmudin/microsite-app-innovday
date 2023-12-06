@@ -30,7 +30,7 @@ export const home = {
           "Event knowledge sharing yang diadakan setiap Hari Kamis dengan menghadirkan para ahli di bidangnya.",
         cta: {
           label: "Explore Innovation Day",
-          url: "/innovation-day",
+          url: "https://innovationday.ddbtelkom.id/innovation-day/",
         },
         preview: [
           {
@@ -60,7 +60,7 @@ export const home = {
           "Podcast yang membahas beragam topik menarik yang disajikan secara simple, fun, dan fresh untuk menambah beragam insight baru.",
         cta: {
           label: "Explore In Talks",
-          url: "/in-talks",
+          url: "https://innovationday.ddbtelkom.id/in-talks",
         },
         preview: [
           {

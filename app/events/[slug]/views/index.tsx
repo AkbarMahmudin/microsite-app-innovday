@@ -64,7 +64,7 @@ const DetailEventView = ({ event }: Props) => {
         />
       </div>
       
-      <RelatedEvents events={events} {...relatedEvents} />
+      {/* <RelatedEvents events={events} {...relatedEvents} /> */}
     </>
   );
 };
