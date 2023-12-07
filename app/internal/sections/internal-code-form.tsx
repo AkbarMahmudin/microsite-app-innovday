@@ -60,7 +60,6 @@ const EventCodeForm = ({ title, description }: Props) => {
         title: "Gagal",
         description: typeof error === "string" ? error : "Terjadi kesalahan",
         variant: "destructive",
-        className: "top-0",
         icon: <Icon icon="mdi:alert-circle-outline" width={28} />,
       })
       console.error(error);

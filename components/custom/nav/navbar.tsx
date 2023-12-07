@@ -203,15 +203,19 @@ export default function Navbar({ announcement }: Props) {
   }, [setOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-3xl">
-      {announcement && <Announcement {...announcement} />}
-      <nav className="container min-w-full justify-between items-center inline-flex backdrop-blur-[50px] bg-opacity-80 bg-cyan-50 shadow">
-        <Image
-          src="/logo/innovday_full.png"
-          alt="Innovation Day Logo"
-          width={130}
-          height={130}
-        />
+    <>
+      <header className="w-full bg-transparent backdrop-blur-3xl">
+        {announcement && <Announcement {...announcement} />}
+      </header>
+      <nav className="container sticky top-0 z-50 min-w-full justify-between items-center inline-flex backdrop-blur-[50px] bg-opacity-80 bg-cyan-50 shadow">
+        <Link href="/" passHref title="Logo Innovation Day">
+          <Image
+            src="/logo/innovday_full.png"
+            alt="Innovation Day Logo"
+            width={130}
+            height={130}
+          />
+        </Link>
 
         <NavigationMenu className="hidden lg:block">
           <NavigationMenuList>
@@ -254,6 +258,6 @@ export default function Navbar({ announcement }: Props) {
           onSearch={handleSearch}
         />
       </nav>
-    </header>
+    </>
   );
 }

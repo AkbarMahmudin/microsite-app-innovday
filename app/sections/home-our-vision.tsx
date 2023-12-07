@@ -26,7 +26,7 @@ const HomeOurVision = () => {
   }, []);
 
   return (
-    <section className="container gap-4 flex flex-col lg:grid lg:grid-rows-3 lg:grid-flow-col">
+    <section className="container gap-4 flex flex-col lg:grid lg:grid-rows-3 lg:grid-flow-col py-20">
       <div className="our-vision__header flex flex-col gap-4 justify-start items-start lg:col-span-2">
         <Badge size="small">{cp.tag}</Badge>
         <h2 className="text-2xl font-bold">{cp.title}</h2>

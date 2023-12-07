@@ -28,6 +28,7 @@ import {
 // hooks
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useToast } from "@/components/ui/use-toast";
 
 const contactSchema = z.object({
   name: z.string().min(3, "Nama lengkap minimal 3 karakter").max(255),
@@ -57,9 +58,9 @@ const ContactField = ({
     <FormField
       control={control}
       name={name}
-      render={({ field }) => (
+      render={({ field, fieldState }) => (
         <FormItem>
-          <FormLabel htmlFor={name} className="text-sm md:text-base">
+          <FormLabel htmlFor={name} className="text-sm md:text-base text-black">
             {label}
           </FormLabel>
           <FormControl>
@@ -68,6 +69,7 @@ const ContactField = ({
               id: name,
               placeholder,
               type,
+              isValid: !fieldState.invalid,
             })}
           </FormControl>
           <FormDescription className="md:text-sm text-xs">
@@ -81,6 +83,8 @@ const ContactField = ({
 };
 
 const ContactForm = () => {
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof contactSchema>>({
     resolver: zodResolver(contactSchema),
     defaultValues: {
@@ -95,6 +99,11 @@ const ContactForm = () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 500));
       form.reset();
+      toast({
+        title: "Pesan terkirim",
+        description: "Terima kasih telah menghubungi kami",
+        variant: "success",
+      });
       console.info("DATA", values);
     } catch (error) {
       console.error(error);
@@ -130,8 +139,7 @@ const ContactForm = () => {
                   <ContactField
                     label="Email"
                     name="email"
-                    placeholder="Ketik email Anda di sini"
-                    description="Contoh: innovationday@gmail.com"
+                    placeholder="innov@day.com"
                     control={form.control}
                   >
                     <Input
@@ -144,8 +152,7 @@ const ContactForm = () => {
                   <ContactField
                     label="Subjek"
                     name="subject"
-                    placeholder="Ketik subjek Anda di sini"
-                    description="Contoh: Kendala saat mendaftar menjadi speaker"
+                    placeholder="Kendala saat mendaftar menjadi speaker"
                     control={form.control}
                   >
                     <Input className="placeholder:text-xs md:placeholder:text-sm" />
@@ -155,8 +162,7 @@ const ContactForm = () => {
                   <ContactField
                     label="Pesan"
                     name="message"
-                    placeholder="Ketik pesan Anda di sini"
-                    description="Contoh: Sudah 3 hari semenjak pendaftaran tidak ada email pemberitahuan"
+                    placeholder="Sudah 3 hari semenjak pendaftaran tidak ada email pemberitahuan"
                     control={form.control}
                   >
                     <Textarea

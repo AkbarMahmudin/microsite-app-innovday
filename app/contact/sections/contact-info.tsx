@@ -51,7 +51,7 @@ const renderSocialMediaList = () => {
 const ContactInfo = () => {
   return (
     <aside className="container lg:px-0 lg:w-1/2">
-      <Card className="pt-6 pb-20 px-8 lg:py-[71px] lg:pl-[50px] lg:pr-[100px] bg-primary flex flex-col items-center gap-8 text-white rounded-3xl">
+      <Card className="pt-6 pb-20 px-8 lg:py-28 lg:pl-[50px] lg:pr-[100px] bg-primary flex flex-col items-center gap-8 text-white rounded-3xl">
         <Maskot variant="smartphone" className="w-64 lg:w-[420px]" />
         {renderContactList()}
         {renderSocialMediaList()}
