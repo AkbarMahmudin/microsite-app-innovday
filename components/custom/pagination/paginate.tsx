@@ -32,7 +32,6 @@ const Paginate = ({
       pageCount={pageCount}
       previousLabel={<Icon icon="eva:chevron-left-outline" width={24} />}
       previousClassName="py-[5px] px-[14px]"
-      renderOnZeroPageCount={null}
       pageClassName="py-[5px] px-[14px]"
       activeClassName="bg-primary text-white rounded-full p-0"
       disabledLinkClassName="cursor-not-allowed opacity-50"

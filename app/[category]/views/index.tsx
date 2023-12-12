@@ -115,7 +115,6 @@ const EventView = ({ category: categoryEvent }: { category: string }) => {
           pageCount={Math.ceil(events.length / LIMIT)}
           onPageChange={handleOnPageChange}
           perPage={LIMIT}
-          className="scroll-smooth"
         />
       )}
     </>

@@ -1,7 +1,7 @@
 const EVENTS = [
   {
     id: 1,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #1",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content: `
@@ -30,7 +30,7 @@ const EVENTS = [
   },
   {
     id: 2,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #2",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -48,7 +48,7 @@ const EVENTS = [
   },
   {
     id: 3,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #3",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -66,7 +66,7 @@ const EVENTS = [
   },
   {
     id: 4,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #4",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -84,7 +84,7 @@ const EVENTS = [
   },
   {
     id: 5,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #5",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -102,7 +102,7 @@ const EVENTS = [
   },
   {
     id: 6,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #6",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -120,7 +120,7 @@ const EVENTS = [
   },
   {
     id: 7,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #7",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -138,7 +138,7 @@ const EVENTS = [
   },
   {
     id: 8,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #1",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content: `
@@ -167,7 +167,7 @@ const EVENTS = [
   },
   {
     id: 9,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #2",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -185,7 +185,7 @@ const EVENTS = [
   },
   {
     id: 10,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #3",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -203,7 +203,7 @@ const EVENTS = [
   },
   {
     id: 11,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #4",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -221,7 +221,7 @@ const EVENTS = [
   },
   {
     id: 12,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #5",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -239,7 +239,7 @@ const EVENTS = [
   },
   {
     id: 13,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #6",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -257,7 +257,7 @@ const EVENTS = [
   },
   {
     id: 14,
-    thumbnailUrl: "/valid thumbnail.png",
+    thumbnailUrl: "/images/valid thumbnail.png",
     title: "Innovation Day #7",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
