@@ -1,5 +1,5 @@
 "use client";
-import { usePathname, useRouter } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 
 // components
 import { Breadcrumbs } from "@/components/custom/breadcrumbs";
@@ -28,8 +28,8 @@ const EventView = ({ category: categoryEvent }: { category: string }) => {
 
   const cp: any = copywrite[categoryFormated as keyof typeof copywrite];
 
-  if (!cp) {
-    return router.push("/404");
+  if (cp === undefined || !cp) {
+    return redirect("/404");
   }
 
   const { title, description, breadcrumbs } = cp;

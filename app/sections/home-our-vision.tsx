@@ -39,7 +39,7 @@ const HomeOurVision = () => {
       />
       <Maskot
         variant={maskot[activeTab]}
-        className="sm:w-full md:w-[70%] lg:w-full mx-auto px-20 bg-[url('/background/our-vision.png')] bg-no-repeat lg:bg-[length:300px] bg-[length:180px] bg-right lg:row-span-3"
+        className="sm:w-full md:w-[70%] lg:w-full mx-auto px-20 bg-[url('/background/our-vision.webp')] bg-no-repeat lg:bg-[length:300px] bg-[length:180px] bg-right lg:row-span-3"
       />
     </section>
   );

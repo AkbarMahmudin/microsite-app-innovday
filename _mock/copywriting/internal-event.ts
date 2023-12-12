@@ -15,5 +15,5 @@ export const internalEvent = {
   ],
   title: "Internal Event",
   description:
-    "Silakan masukan password untuk dapat mengakses private event",
+    "Silakan masukan <b>kode</b> untuk dapat membuka event",
 };

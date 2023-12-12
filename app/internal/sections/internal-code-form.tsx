@@ -68,7 +68,7 @@ const EventCodeForm = ({ title, description }: Props) => {
   });
 
   return (
-    <section className="container min-w-full grid grid-col-1 md:grid-cols-3 gap-10 lg:min-h-[76vh] min-h-[40vh] justify-center items-center bg-[url('/background/internal.png')] bg-cover bg-center bg-no-repeat">
+    <section className="container min-w-full grid grid-col-1 md:grid-cols-3 gap-10 lg:min-h-[76vh] min-h-[40vh] justify-center items-center bg-[url('/background/internal.webp')] bg-cover bg-center bg-no-repeat">
       <Maskot variant="laptop" className="w-full" />
 
       <article className="internal__content flex flex-col gap-5 md:gap-8 md:col-span-2 md:justify-center lg:p-[133px]">
@@ -81,7 +81,9 @@ const EventCodeForm = ({ title, description }: Props) => {
 
         <div className="flex flex-col gap-5 md:gap-3">
           <p className="text-sm md:text-base font-normal md:leading-normal">
-            {description}
+            <span dangerouslySetInnerHTML={{
+              __html: description
+            }}></span>
           </p>
 
           <Form {...form}>
@@ -108,7 +110,7 @@ const EventCodeForm = ({ title, description }: Props) => {
                 className="w-full"
                 disabled={form.formState.isSubmitting}
               >
-                Submit
+                Akses Event
               </Button>
             </form>
           </Form>

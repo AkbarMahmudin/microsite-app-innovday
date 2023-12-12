@@ -214,6 +214,8 @@ export default function Navbar({ announcement }: Props) {
             alt="Innovation Day Logo"
             width={130}
             height={130}
+            priority
+            fetchPriority="high"
           />
         </Link>
 

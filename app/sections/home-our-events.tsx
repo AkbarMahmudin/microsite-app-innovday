@@ -96,7 +96,7 @@ const Event = ({
 
 const OurEvents = () => {
   return (
-    <section className="container flex flex-col gap-10 min-w-full bg-[url('/background/our-event.png')] bg-no-repeat lg:bg-[length:300px] bg-[length:200px] lg:bg-[right_bottom_14rem] bg-[right_bottom_30rem]">
+    <section className="container flex flex-col gap-10 min-w-full bg-[url('/background/our-event.webp')] bg-no-repeat lg:bg-[length:300px] bg-[length:200px] lg:bg-[right_bottom_14rem] bg-[right_bottom_30rem]">
       <EventDescription />
       <div className="flex flex-col gap-20">
         <Event direction="right" type="innovation-day" />

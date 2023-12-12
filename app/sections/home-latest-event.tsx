@@ -61,7 +61,7 @@ const EventList = ({ data }: EventListProps) => {
 
 const LatestEvent = () => {
   return (
-    <section className="container flex flex-col justify-center items-start gap-4 min-w-full bg-[url('/background/latest-event.png')] bg-no-repeat bg-[length:96px] bg-left-top">
+    <section className="container flex flex-col justify-center items-start gap-4 min-w-full bg-[url('/background/latest-event.webp')] bg-no-repeat bg-[length:96px] bg-left-top">
       <div className="md:relative flex flex-col justify-center items-start gap-4 w-full mb-4">
         <Badge size="small">{cp.tag}</Badge>
         <h2 className="text-2xl font-bold">{cp.title}</h2>

@@ -16,13 +16,13 @@ type Props = {
 
 const Maskot = ({ variant, className }: Props) => {
   const maskotSrc = {
-    base: "/maskot/base.png",
-    bulb: "/maskot/bulb.png",
-    dslr: "/maskot/dslr.png",
-    intercom: "/maskot/intercom.png",
-    laptop: "/maskot/laptop.png",
-    microphone: "/maskot/microphone.png",
-    smartphone: "/maskot/smartphone.png",
+    base: "/maskot/base.webp",
+    bulb: "/maskot/bulb.webp",
+    dslr: "/maskot/dslr.webp",
+    intercom: "/maskot/intercom.webp",
+    laptop: "/maskot/laptop.webp",
+    microphone: "/maskot/microphone.webp",
+    smartphone: "/maskot/smartphone.webp",
     "not-found": "/maskot/not-found.png",
   };
 
@@ -33,6 +33,8 @@ const Maskot = ({ variant, className }: Props) => {
       width={300}
       height={300}
       className={className}
+      priority
+      fetchPriority="high"
     />
   );
 };

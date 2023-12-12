@@ -20,7 +20,7 @@ const NotFound = () => {
     useCommand();
 
   return (
-    <section className="container min-w-full min-h-[calc(100vh-10rem)] grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-[50px] gap-y-10 justify-center items-center text-muted-foreground bg-[url('/background/404.png')] bg-contain bg-no-repeat bg-center">
+    <section className="container min-w-full min-h-[calc(100vh-10rem)] grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 lg:gap-y-[50px] gap-y-10 justify-center items-center text-muted-foreground bg-[url('/background/404.webp')] bg-contain bg-no-repeat bg-center">
       <Maskot
         variant="smartphone"
         className="mx-auto p-4 md:w-full w-3/4 lg:row-span-2"

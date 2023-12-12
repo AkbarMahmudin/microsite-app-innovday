@@ -9,7 +9,7 @@ import "swiper/css/scrollbar";
 
 import "./style.css";
 
-import { FreeMode, Scrollbar, Mousewheel, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import { TestimoniCard } from "../card";
 import { cn } from "@/lib/utils";
 
@@ -38,7 +38,7 @@ const SwiperInfinite = ({
       scrollbar={false}
       mousewheel={true}
       grabCursor={true}
-      modules={[FreeMode, Scrollbar, Mousewheel, Autoplay]}
+      modules={[Autoplay]}
       autoplay={{
         delay: 0,
         disableOnInteraction: false,

@@ -7,11 +7,7 @@ type Props = {
 };
 
 const Events = ({ params }: Props) => {
-  return (
-    <>
-      <EventView category={params.category} />
-    </>
-  );
+  return <EventView category={params.category} />;
 };
 
 export default Events;

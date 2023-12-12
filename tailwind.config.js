@@ -72,7 +72,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        'bg-hero': "url('/background/bg-hero.png')",
+        'bg-hero': "url('/background/bg-hero.webp')",
       }
     },
   },

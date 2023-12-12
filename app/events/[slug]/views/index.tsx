@@ -4,12 +4,17 @@ import { Content, DetailInformation, Header, RelatedEvents } from "../sections";
 // copywrite
 import { relatedEvents } from "@/_mock/copywriting";
 import EVENTS from "@/_mock/_events";
+import { redirect } from "next/navigation";
 
 type Props = {
   event: any;
 };
 
 const DetailEventView = ({ event }: Props) => {
+  if (!event) {
+    return redirect("/404");
+  }
+
   const {
     id,
     title,
