@@ -1,7 +1,7 @@
 const EVENTS = [
   {
     id: 1,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #1",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content: `
@@ -30,7 +30,7 @@ const EVENTS = [
   },
   {
     id: 2,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #2",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -48,7 +48,7 @@ const EVENTS = [
   },
   {
     id: 3,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #3",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -66,7 +66,7 @@ const EVENTS = [
   },
   {
     id: 4,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #4",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -84,7 +84,7 @@ const EVENTS = [
   },
   {
     id: 5,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #5",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -102,7 +102,7 @@ const EVENTS = [
   },
   {
     id: 6,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #6",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -120,7 +120,7 @@ const EVENTS = [
   },
   {
     id: 7,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #7",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -138,7 +138,7 @@ const EVENTS = [
   },
   {
     id: 8,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #1",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content: `
@@ -167,7 +167,7 @@ const EVENTS = [
   },
   {
     id: 9,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #2",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -185,7 +185,7 @@ const EVENTS = [
   },
   {
     id: 10,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #3",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -203,7 +203,7 @@ const EVENTS = [
   },
   {
     id: 11,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #4",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -221,7 +221,7 @@ const EVENTS = [
   },
   {
     id: 12,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #5",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -239,7 +239,7 @@ const EVENTS = [
   },
   {
     id: 13,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #6",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:
@@ -257,7 +257,7 @@ const EVENTS = [
   },
   {
     id: 14,
-    thumbnailUrl: "/images/valid thumbnail.png",
+    thumbnailUrl: "https://firebasestorage.googleapis.com/v0/b/microsite-test-f4d9e.appspot.com/o/stream-thumbnail-cd7a3a106b8844596b69d72893fc22b16.png?alt=media&token=aaf1767b-1af3-45d6-a95a-43209912009d",
     title: "Innovation Day #7",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     content:

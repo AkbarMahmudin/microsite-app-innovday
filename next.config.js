@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        hostname: "firebasestorage.googleapis.com",
+      }
+    ],
   },
 };
 
