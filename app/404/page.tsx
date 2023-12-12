@@ -64,7 +64,7 @@ const NotFound = () => {
             className: "w-full block",
           })}
         >
-          Kembali ke Beranda
+          Kembali ke Halaman Utama
         </Link>
       </article>
 

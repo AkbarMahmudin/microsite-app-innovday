@@ -29,8 +29,7 @@ const EventView = ({ category: categoryEvent }: { category: string }) => {
   const cp: any = copywrite[categoryFormated as keyof typeof copywrite];
 
   if (!cp) {
-    router.push("/404");
-    return null;
+    return router.push("/404");
   }
 
   const { title, description, breadcrumbs } = cp;

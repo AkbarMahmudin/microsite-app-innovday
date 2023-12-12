@@ -14,7 +14,7 @@ export const home = {
         },
         "our-speakers": {
           label: "Be Our Speakers",
-          url: "/speakers",
+          url: "/speaker",
         },
       },
     },
@@ -155,7 +155,7 @@ export const home = {
         "Innovation Day membuka peluang bagi siapa pun yang berminat menjadi pembicara di event Innovation Day. Berikut benefit yang akan Sobat Innov rasakan sebagai speaker Innovation Day.",
       cta: {
         label: "Learn More",
-        url: "/speakers",
+        url: "/speaker",
       },
       benefits: [
         {
@@ -191,7 +191,7 @@ export const home = {
         "Temukan beberapa ulasan mereka tentang pengalamannya menjadi pembicara di Innovation Day. ",
       cta: {
         label: "Be Our Speaker",
-        url: "/speakers",
+        url: "/speaker",
       },
       testimonies: [
         {
@@ -220,7 +220,7 @@ export const home = {
         "Sobat Innov tertarik menjadi speakers di Innovation Day? Ayo lengkapi data diri kamu dengan mengisi form di bawah ini.",
       cta: {
         label: "Regist Speaker Innovation Day",
-        url: "/speakers",
+        url: "/speaker",
       },
     },
     "our-social-media": {

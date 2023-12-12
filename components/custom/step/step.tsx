@@ -4,11 +4,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import React from "react";
 
-const StepDescription = ({ title, description, className }: any) => (
+type StepDescriptionProps = {
+  title: string;
+  description: string | React.ReactNode;
+  component?: React.ReactNode;
+  className?: string;
+};
+
+const StepDescription = ({ title, description, component, className }: StepDescriptionProps) => (
   <div className={cn("content pb-8 block", className)}>
     <h4 className="font-bold text-base py-2.5">{title}</h4>
-    <p className="description text-xs font-normal leading-normal">
+    <p className="description text-xs md:text-sm font-normal leading-normal">
       {description}
+      {component}
+      {/* {typeof description === "function" ? description() : description} */}
     </p>
   </div>
 );
@@ -16,7 +25,8 @@ const StepDescription = ({ title, description, className }: any) => (
 type StepListProps = {
   number: number;
   title: string;
-  description: string;
+  description: string | React.ReactNode;
+  component?: React.ReactNode;
   isLastStep?: boolean;
   isActived?: boolean;
 };
@@ -42,6 +52,7 @@ const StepList = ({
   number,
   title,
   description,
+  component,
   isLastStep = false,
   isActived = false,
 }: StepListProps) => (
@@ -68,52 +79,62 @@ const StepList = ({
     <StepDescription
       title={title}
       description={description}
-      className="md:block hidden" />
+      component={component}
+      className="md:block hidden"
+    />
   </div>
 );
 
 type Props = {
+  title: string;
   data: {
     title: string;
-    description: string;
+    description: string | React.ReactNode;
+    component?: React.ReactNode;
   }[];
   step: number;
-}
+  className?: string;
+};
 
-const Step = ({ data, step }: Props) => {
+const Step = ({ title, data, step, className }: Props) => {
   return (
     <>
-      <Card>
+      <Card className={className}>
         <CardHeader>
           <CardTitle className="font-bold text-base md:text-2xl">
-            Lets Be Our Speaker
+            {title}
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="flex md:flex-col flex-row items-center md:mb-0 mb-3">
+          <ul className="flex md:flex-col flex-row items-center md:mb-0 mb-3">
             {data.map((item, index) => (
-              <>
+              <li
+                key={index}
+                className={
+                  index + 1 < data.length ? "flex flex-row w-full items-center" : ""
+                }
+              >
                 <StepList
-                  key={index}
                   number={index + 1}
                   isLastStep={index + 1 === data.length}
                   isActived={step >= index + 1}
                   {...item}
                 />
-                {!(index + 1 === data.length) && (
+                {index + 1 !== data.length && (
                   <Line
                     isActived={step >= index + 1}
                     className="md:px-1 py-0.5 md:h-full h-fit md:w-fit w-full md:hidden"
                   />
                 )}
-              </>
+              </li>
             ))}
-          </div>
+          </ul>
 
           {/* Mobile Version */}
           <StepDescription
             title={data[step - 1]?.title}
             description={data[step - 1]?.description}
+            component={data[step - 1]?.component}
             className="md:hidden block text-center"
           />
         </CardContent>

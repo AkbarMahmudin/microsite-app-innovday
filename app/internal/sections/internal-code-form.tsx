@@ -54,6 +54,7 @@ const EventCodeForm = ({ title, description }: Props) => {
       
       form.reset();
       console.info("DATA", values);
+      
       return router.push("/events/8")
     } catch (error) {
       toast({

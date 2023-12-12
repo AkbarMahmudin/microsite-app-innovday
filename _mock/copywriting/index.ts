@@ -6,3 +6,4 @@ export { internalEvent } from "./internal-event";
 export { relatedEvents } from "./detail";
 export { faqs } from "./faq";
 export { response } from "./response";
+export { speaker } from "./speaker";
