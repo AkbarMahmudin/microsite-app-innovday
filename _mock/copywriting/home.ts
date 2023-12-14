@@ -252,7 +252,7 @@ export const home = {
           url: "https://open.spotify.com/show/5Ry47U1mtCrhf5EEuJQL88?si=2c70f568a1c74ea0",
         },
         embed: `
-        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/show/5Ry47U1mtCrhf5EEuJQL88/" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <iframe style="border-radius:12px" title="In Talks Spotify" src="https://open.spotify.com/embed/show/5Ry47U1mtCrhf5EEuJQL88/" width="100%" height="100%" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         `,
       },
     },
