@@ -26,7 +26,7 @@ const ContactInfo = ({ contact }: ContactInfoProps) => (
           className="self-stretch justify-start items-start gap-3 inline-flex"
         >
           <Icon icon={item.icon} width={18} height={18} />
-          <Link href={item.link || '#'}>
+          <Link href={item.link || '#'} title={item.text}>
             {item.text}
           </Link>
         </li>
@@ -47,7 +47,7 @@ const Navigation = ({ menu, ourProgram }: NavigationProps) => (
       <ul className="flex-col justify-center items-start gap-3 flex">
         {menu.map((item, index) => (
           <li key={index} className="text-white text-sm font-normal">
-            <Link href={item.path}>{item.title}</Link>
+            <Link href={item.path} title={item.title}>{item.title}</Link>
           </li>
         ))}
       </ul>
@@ -60,7 +60,7 @@ const Navigation = ({ menu, ourProgram }: NavigationProps) => (
       <ul className="flex-col justify-center items-start gap-3 flex">
         {ourProgram.map((item, index) => (
           <li key={index} className="text-white text-sm font-normal">
-            <Link href={item.path}>{item.title}</Link>
+            <Link href={item.path} title={item.title}>{item.title}</Link>
           </li>
         ))}
       </ul>
@@ -84,8 +84,9 @@ const SocialMedia = ({ account }: SocialMediaProps) => (
           size="icon"
           className="rounded-full"
           key={index}
+          name="social-media"
         >
-          <Link href={item.path}>
+          <Link href={item.path} title="Follow our social media">
             <Icon
               icon={item.icon}
               width={24}

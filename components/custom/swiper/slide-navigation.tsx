@@ -29,6 +29,7 @@ const SlideNavigation = ({
         type="button"
         onClick={() => swiper.slidePrev()}
         disabled={activeIndex === 0}
+        name="prev-button"
       >
         <Icon icon="uil:arrow-left" width={28} />
       </Button>
@@ -39,6 +40,7 @@ const SlideNavigation = ({
         type="button"
         onClick={() => swiper.slideNext()}
         disabled={activeIndex === lengthItems - 1}
+        name="next-button"
       >
         <Icon icon="uil:arrow-right" width={28} />
       </Button>

@@ -17,7 +17,9 @@ const renderContactList = () => {
           className="self-stretch justify-start items-center gap-3 inline-flex"
         >
           <Icon icon={item.icon} className="lg:w-6" />
-          <Link href={item.link || "#"}>{item.text}</Link>
+          <Link href={item.link || "#"} title={item.text}>
+            {item.text}
+          </Link>
         </li>
       ))}
     </ul>
@@ -33,8 +35,9 @@ const renderSocialMediaList = () => {
           size="icon"
           className="rounded-full"
           key={index}
+          name="social-media"
         >
-          <Link href={item.path}>
+          <Link href={item.path} title="Follow our social media">
             <Icon
               icon={item.icon}
               width={24}

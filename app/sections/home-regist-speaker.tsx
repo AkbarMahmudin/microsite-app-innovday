@@ -18,7 +18,7 @@ const cp = home.content["regist-speaker"];
 
 const renderCircle = () => (
   <Image
-    src="/background/regist-speaker.png"
+    src="/background/regist-speaker.webp"
     alt=""
     width={100}
     height={100}
@@ -60,6 +60,7 @@ const RegistSpeaker = () => {
             className={buttonVariants({
               className: "mx-auto lg:mx-0",
             })}
+            title={cp.cta.label}
           >
             {cp.cta.label}
           </Link>

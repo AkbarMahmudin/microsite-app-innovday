@@ -15,13 +15,14 @@ export const PrevButton = ({ type = "button", className, onClick }: Props) => (
     variant="secondary"
     className={className}
     onClick={onClick}
+    name="prev-button"
   >
     <Icon icon="ci:arrow-left-lg" width={20} className="mr-2" /> Sebelumnya
   </Button>
 );
 
 export const NextButton = ({ type = "submit", className }: Props) => (
-  <Button type={type} className={className}>
+  <Button type={type} className={className} name="next-button">
     Selanjutnya <Icon icon="ci:arrow-right-lg" width={20} className="ml-2" />
   </Button>
 );

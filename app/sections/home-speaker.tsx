@@ -27,6 +27,7 @@ const BeOurSpeaker = () => {
               variant: "default",
               size: "sm",
             })}
+            title={cp.cta.label}
           >
             {cp.cta.label}
           </Link>

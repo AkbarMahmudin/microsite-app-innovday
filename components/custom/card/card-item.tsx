@@ -63,6 +63,7 @@ const CardItem = ({
         <Link
           href={url}
           className="inline-flex flex-row justify-between items-start"
+          title={title}
         >
           <CardTitle className="text-base font-bold">{title}</CardTitle>
           <svg

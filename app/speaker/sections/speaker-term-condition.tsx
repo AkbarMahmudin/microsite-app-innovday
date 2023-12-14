@@ -54,6 +54,7 @@ const SpeakerTermCondition = ({
               href="/contact"
               target="_blank"
               className="text-primary underline"
+              title="contact us"
             >
               Contact Us
             </Link>

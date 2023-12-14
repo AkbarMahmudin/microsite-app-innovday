@@ -178,6 +178,7 @@ const ContactForm = () => {
                 type="submit"
                 className="w-full"
                 disabled={form.formState.isSubmitting}
+                name="send"
               >
                 Kirim
               </Button>

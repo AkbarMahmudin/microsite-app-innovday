@@ -29,7 +29,7 @@ const SpeakerStatus = ({ title, status, description, onPrev }: Props) => {
       </article>
       <div className="cta grid grid-cols-1 gap-y-5">
         <p className="text-sm md:text-base text-center">Silakan hubungi kami untuk pertanyaan lebih lanjut </p>
-        <Link href="/contact" className={buttonVariants()}>
+        <Link href="/contact" className={buttonVariants()} title="contact us">
           Contact Us
         </Link>
       </div>

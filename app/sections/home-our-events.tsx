@@ -78,6 +78,7 @@ const Event = ({
             className: "w-fit pl-0",
           })}
           style={{ color: "#000" }}
+          title={cp[type].cta.label}
         >
           {cp[type].cta.label}
           <ArrowRight className="ml-2" size={24} />

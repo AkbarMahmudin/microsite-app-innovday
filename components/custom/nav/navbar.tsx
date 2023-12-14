@@ -58,6 +58,7 @@ const ListItem = React.forwardRef<
             className
           )}
           href={props.href as string}
+          title="Go to page"
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
@@ -119,6 +120,7 @@ const ChildrenItem = ({ title, item }: any) => {
                         pathname === childItem.path && "border-primary border-2"
                       )}
                       href={childItem.path}
+                      title="Go to page"
                     >
                       <Icon
                         icon="material-symbols-light:event-note"
@@ -162,7 +164,7 @@ const MenuItems = ({ items }: any) => {
       {item.children ? (
         <ChildrenItem title={item.title} item={item.children} />
       ) : (
-        <Link href={item.path} legacyBehavior passHref>
+        <Link href={item.path} legacyBehavior passHref title="Go to page">
           <NavigationMenuLink
             className={`${navigationMenuTriggerStyle()} ${
               pathname === item.path ? "text-primary" : ""
@@ -236,6 +238,7 @@ export default function Navbar({ announcement }: Props) {
           variant="outline"
           className="pl-1.5 pr-2 rounded-[10px] bg-transparent justify-center items-center gap-1 lg:inline-flex hidden border-input"
           onClick={() => setOpen((prev) => !prev)}
+          name="search"
         >
           <Icon
             icon="basil:search-outline"

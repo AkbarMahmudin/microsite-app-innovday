@@ -6,6 +6,9 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Mousewheel, Scrollbar } from "swiper/modules";
 
+// mock
+import EVENTS from "@/_mock/_events";
+
 // copywrite
 import { home } from "@/_mock/copywriting";
 
@@ -51,7 +54,7 @@ const EventList = ({ data }: EventListProps) => {
 
       {/* Desktop & Tablet */}
       <div className="md:grid hidden grid-cols-3 lg:gap-[30px] gap-4">
-        {data.slice(0, 3).map((event, index) => (
+        {data.map((event, index) => (
           <CardItem key={index} {...event} excerptLength={100} />
         ))}
       </div>
@@ -60,6 +63,11 @@ const EventList = ({ data }: EventListProps) => {
 };
 
 const LatestEvent = () => {
+  const latesEvents = EVENTS.slice(0, 3).map((event) => ({
+    ...event,
+    url: "/events/" + event.id,
+  }));
+  
   return (
     <section className="container flex flex-col justify-center items-start gap-4 min-w-full bg-[url('/background/latest-event.webp')] bg-no-repeat bg-[length:96px] bg-left-top">
       <div className="md:relative flex flex-col justify-center items-start gap-4 w-full mb-4">
@@ -73,13 +81,16 @@ const LatestEvent = () => {
             className:
               "md:absolute md:top-1/2 md:transform md:-translate-y-1/2 md:right-0",
           })}
+          title={cp.cta.label}
         >
           {cp.cta.label}
         </Link>
-        <p className="text-sm md:text-base font-normal self-stretch">{cp.description}</p>
+        <p className="text-sm md:text-base font-normal self-stretch">
+          {cp.description}
+        </p>
       </div>
 
-      <EventList data={cp.events} />
+      <EventList data={latesEvents as any} />
     </section>
   );
 };

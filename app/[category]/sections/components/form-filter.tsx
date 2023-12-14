@@ -162,6 +162,7 @@ const FilterForm = ({
                         size="sm"
                         className="flex items-center gap-1.5 w-fit bg-destructive"
                         onClick={handleRemoveTags}
+                        name="clear-tags"
                       >
                         <Icon icon="ion:trash-bin" width={18} />
                       </Button>
@@ -190,6 +191,7 @@ const FilterForm = ({
                 className="w-full"
                 disabled={isDisabled}
                 onClick={handleFilter}
+                name="apply-filter"
               >
                 Terapkan
               </Button>
@@ -199,6 +201,7 @@ const FilterForm = ({
                 className="w-full"
                 disabled={isDisabled}
                 onClick={handleResetFilter}
+                name="reset-filter"
               >
                 Reset
               </Button>

@@ -72,6 +72,7 @@ const Toolbar = ({
           <Button
             className="absolute top-1/2 transform -translate-y-1/2 right-0.5 rounded-s-none h-min bg-background hover:bg-background text-black"
             onClick={handleReset}
+            name="clear"
           >
             <Icon icon="clarity:close-line" className="w-5 h-5" />
           </Button>
@@ -104,6 +105,7 @@ const Toolbar = ({
           <Button
             variant="outline"
             className="w-full flex justify-between border border-input rounded-md text-black"
+            name="filter"
           >
             <span className="text-sm font-medium">Filter</span>
             <Icon icon="bi:filter" className="w-5 h-5" />

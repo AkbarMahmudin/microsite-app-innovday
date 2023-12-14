@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -67,6 +66,7 @@ const Hero = () => {
               size: "lg",
               className: "w-full md:w-auto",
             })}
+            title={cp.cta["our-events"].label}
           >
             {cp.cta["our-events"].label}
           </Link>
@@ -79,6 +79,7 @@ const Hero = () => {
               className: "hover:text-primary w-full md:w-auto",
             })}
             style={{ color: "#000" }}
+            title={cp.cta["our-speakers"].label}
           >
             {cp.cta["our-speakers"].label}
             <ArrowRight className="ml-2" size={24} />

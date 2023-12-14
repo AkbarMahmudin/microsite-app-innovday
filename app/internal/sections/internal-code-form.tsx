@@ -109,6 +109,7 @@ const EventCodeForm = ({ title, description }: Props) => {
                 type="submit"
                 className="w-full"
                 disabled={form.formState.isSubmitting}
+                name="access-event"
               >
                 Akses Event
               </Button>

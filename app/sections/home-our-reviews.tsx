@@ -26,6 +26,7 @@ const OurReviews = () => {
             className:
               "text-white border-white bg-transparent rounded-md border-2",
           })}
+          title={cp.cta.label}
         >
           {cp.cta.label}
         </Link>

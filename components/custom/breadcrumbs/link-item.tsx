@@ -14,7 +14,7 @@ const LinkItem = ({ href, activeLast = false, children }: LinkItemProps) => {
 
   if (activeLast) {
     return (
-      <Button variant="link" size="sm" disabled>
+      <Button variant="link" size="sm" disabled name="active-last">
         {children}
       </Button>
     );

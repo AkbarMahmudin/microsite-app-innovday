@@ -37,6 +37,7 @@ const NoDataFound = () => {
             className={buttonVariants({
               className: "text-base font-bold w-full",
             })}
+            title={cp.cta.label}
           >
             {cp.cta.label}
             <ArrowRight className="inline-block ml-2" size={20} />

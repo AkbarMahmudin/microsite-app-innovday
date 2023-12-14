@@ -22,7 +22,7 @@ const ListItem = ({ icon, title, value }: any) => (
 const TagItems = ({ tags }: any) => (
   <div className="flex gap-2 flex-wrap">
     {tags.map((tag: string, index: number) => (
-      <Link key={index} href={`${paths.events.root}?tags=${tag}`}>
+      <Link key={index} href={`${paths.events.root}?tags=${tag}`} title={tag}>
         <Tag text={tag} />
       </Link>
     ))}
@@ -31,21 +31,32 @@ const TagItems = ({ tags }: any) => (
 
 const FeedBack = () => (
   <div className="flex flex-col gap-4">
-    <Link href="/feedback" className={buttonVariants({})}>
+    <Link href="/feedback" className={buttonVariants({})} title="feedback">
       <Icon icon="fluent:chat-12-filled" className="w-6 h-6 mr-3" />
       Berikan Feedback
     </Link>
     <div className="grid grid-cols-2 gap-3">
-      <Link href="/faq" className={buttonVariants({
-        variant: "outline",
-      })}>
+      <Link
+        href="/faq"
+        className={buttonVariants({
+          variant: "outline",
+        })}
+        title="fq"
+      >
         <Icon icon="ri:question-fill" className="w-6 h-6 mr-3" />
         FAQ
       </Link>
-      <Link href="/contact-us" className={buttonVariants({
-        variant: "outline",
-      })}>
-        <Icon icon="material-symbols-light:contact-mail" className="w-7 h-7 mr-3" />
+      <Link
+        href="/contact-us"
+        className={buttonVariants({
+          variant: "outline",
+        })}
+        title="contact-us"
+      >
+        <Icon
+          icon="material-symbols-light:contact-mail"
+          className="w-7 h-7 mr-3"
+        />
         Contac Us
       </Link>
     </div>
@@ -102,7 +113,7 @@ const DetailInformation = ({
       <Separator />
 
       <TagItems tags={tags} />
-    
+
       <Separator />
 
       <FeedBack />

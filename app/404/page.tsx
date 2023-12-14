@@ -44,6 +44,7 @@ const NotFound = () => {
           variant="outline"
           className="w-full h-full bg-transparent border-input inline-flex justify-start"
           onClick={() => setOpen(true)}
+          name="search"
         >
           <Icon
             icon="basil:search-outline"
@@ -63,6 +64,7 @@ const NotFound = () => {
             size: "lg",
             className: "w-full block",
           })}
+          title="Kembali ke Halaman Utama"
         >
           Kembali ke Halaman Utama
         </Link>

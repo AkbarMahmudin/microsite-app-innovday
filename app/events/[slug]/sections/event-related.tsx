@@ -70,7 +70,7 @@ const RelatedEvents = ({
           {description}
         </p>
 
-        <Link href={cta.url} passHref className={buttonVariants()}>
+        <Link href={cta.url} passHref className={buttonVariants()} title={cta.label}>
           {cta.label}
         </Link>
       </div>

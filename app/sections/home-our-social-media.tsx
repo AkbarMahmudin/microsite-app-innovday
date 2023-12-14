@@ -34,6 +34,7 @@ const Instagram = () => {
             src={cp.instagram.avatarUrl}
             alt={cp.instagram.name}
             className="bg-white rounded-full w-full object-contain"
+            loading="lazy"
           />
           <AvatarFallback>{cp.instagram.name.charAt(0)}</AvatarFallback>
         </Avatar>
@@ -53,6 +54,7 @@ const Instagram = () => {
               className: "text-sm font-semibold mt-4",
             })}
             target="_blank"
+            title={cp.instagram.cta.label}
           >
             {cp.instagram.cta.label}
           </Link>
@@ -109,6 +111,7 @@ const Spotify = () => (
             className: "text-sm font-semibold mt-4",
           })}
           target="_blank"
+          title={cp.spotify.cta.label}
         >
           {cp.spotify.cta.label}
         </Link>
